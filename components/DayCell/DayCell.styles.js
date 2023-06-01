@@ -12,34 +12,37 @@ export default StyleSheet.create({
     width: '14.28%',
     height: 90,
   },
-  // topContainer: {
-  //   flex: 1,
-  //   flexDirection: 'row',
-  //   width: '100%',
-  // },
-  // bottomContainer: {
-  //   flex: 3,
-  //   flexDirection: 'row',
-  //   width: '100%',
-  // },
-  // topLeftQuadrant: {
-  //   flex: 1,
+  topContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    width: '100%',
+  },
+  bottomContainer: {
+    flex: 3,
+    flexDirection: 'row',
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  
+  topLeftQuadrant: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  topRightQuadrant: {
+    flex: 1,
 
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
+  },
+  iconWrapper: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  names: {
+    fontSize: '7px'
+  }
+  
 
-
-  // },
-  // topRightQuadrant: {
-  //   flex: 1,
-
-  // },
-  // bottomLeftQuadrant: {
-  //   flex: 1,
-
-  // },
-  // bottomRightQuadrant: {
-  //   flex: 1,
-
-  // },
 });
