@@ -13,7 +13,7 @@ const EmptyDayCell = () => (
   </View>
 );
 
-const DayCell = ({ dayData, emptyCell }) => {
+const DayCell = ({ dayData, emptyCell, toggleGridCollapse, handleDayCellTap  }) => {
   if (emptyCell) {
     return <EmptyDayCell />;
   }
@@ -21,9 +21,8 @@ const DayCell = ({ dayData, emptyCell }) => {
   const navigation = useNavigation();
 
   const handlePress = () => {
-    if (!emptyCell) {
-      navigation.navigate('DayView', { dayData });
-    }
+    toggleGridCollapse();
+    handleDayCellTap(dayData);
   };
 
   return (

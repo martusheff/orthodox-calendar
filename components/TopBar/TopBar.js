@@ -5,20 +5,35 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import styles from './TopBar.styles';
+import GestureRecognizer from 'react-native-swipe-gestures';
+import { Entypo } from '@expo/vector-icons';
 
-const TopBar = ({ currentMonth }) => {
-  const navigation = useNavigation();
+const TopBar = ({ toggleGridCollapse, title, isExpanded }) => {
+  const navigation = useNavigation()
+  
+  const handlePress = () => {
+    isExpanded ?
+    navigation.navigate('Settings')
+    :
+    toggleGridCollapse();
+  }
+
+  const handleToggle = () => {
+    toggleGridCollapse();
+  }
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={handleToggle}>
       <Text style={styles.title}>
-        {currentMonth}
+        {title}
       </Text>
-      <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
-        <MaterialIcons name="settings" size={24} color="black" />
-        {/* <MaterialCommunityIcons name="fish" size={24} color="black" />
-        <FontAwesome5 name="oil-can" size={24} color="black" />
-        <MaterialCommunityIcons name="food-steak" size={24} color="black" /> */}
+      </TouchableOpacity>
+      <TouchableOpacity onPress={handlePress}>
+        {isExpanded ?
+         <MaterialIcons name="settings" size={24} color="black" /> 
+        :
+        <Entypo name="chevron-up" size={24} color="black" />}
 
       </TouchableOpacity>
     </View>
