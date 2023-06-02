@@ -6,10 +6,11 @@ import moment from 'moment';
 export function getDayData(date) {
     const events = [];  // Placeholder, fetch actual events here
     const readings = "";  // Placeholder, fetch actual readings here
-    const fastingInfo = "";  // Placeholder, fetch actual fasting info here
     const details = {};  // Placeholder, fetch actual details here
     const fastTitle = getFastingInfo(date); // Placeholder, featch actual details here
-    const title = getTitle(date);
+    const title = "";
+    const holiday = getHoliday(date);
+    const fastLevel = 0;
 
     // const daysFileURL = `./assets/days/days.json`
     // const saintsFileURL = `./assets/saints/saints.json`
@@ -18,13 +19,20 @@ export function getDayData(date) {
 
     
     const saints = getSaintsByDayMonth(date.date(), date.month() + 1);
+    const staticHolidays = getStaticHolidaysByDayMonth(date.date(), date.month() + 1);
 
-    
+    const holidays = staticHolidays
+    if (holiday != null) {
+        holidays.push(holiday)
+    }
+
+
    
+   console.log(holidays)
 
 
 
-    return new DayData(date, events, readings, fastingInfo, details, title, fastTitle, saints);
+    return new DayData(date, events, readings, details, title, fastTitle, fastLevel, saints, holidays);
 }
 
 export function getSaintsByDayMonth(day, month) {
@@ -36,97 +44,175 @@ export function getSaintsByDayMonth(day, month) {
     );
   
     if (matchingDay) {
-        console.log("found matching day")
       const saintsFileURL = `./assets/saints/saints.json`;
       const localSaintData = require(saintsFileURL);
   
       const saintObjects = matchingDay.saints.map((saintId) =>
         localSaintData.find((saint) => saint.id === saintId)
       );
-      console.log(saintObjects)
       return saintObjects;
     }
   
     return [];
   }
 
-function getTitle(date) {
+  export function getStaticHolidaysByDayMonth(day, month) {
+    const daysFileURL = `./assets/days/days.json`;
+    const localDayData = require(daysFileURL);
+  
+    const matchingDay = localDayData.find(
+      (dayData) => dayData.day === day && dayData.month === month
+    );
+  
+    if (matchingDay) {
+      const holidaysFileURL = `./assets/holidays/holidays.json`;
+      const localHolidaysData = require(holidaysFileURL);
+  
+      const holidayObjects = matchingDay.holidays.map((holidayId) =>
+      localHolidaysData.find((holiday) => holiday.id === holidayId)
+      );
+      console.log(holidayObjects)
+      return holidayObjects;
+    }
+  
+    return [];
+  }
 
-
+  function getHoliday(date) {
     const distanceToPascha = getDistanceToPascha(date);
-
+    
     if (distanceToPascha === 0) {
-        return 'Pascha';
+        return {
+            id: 1,
+            title: "Pascha",
+            description: "Celebrates the resurrection of Jesus Christ from the dead."
+        };
     }
 
     if (distanceToPascha === -1) {
-        return 'Thomas Sunday';
+        return {
+            id: 2,
+            title: "Thomas Sunday",
+            description: ""
+        };
     }
 
     if (distanceToPascha === -2) {
-        return 'Lazarus Saturday';
+        return {
+            id: 3,
+            title: "Lazarus Saturday",
+            description: ""
+        };
     }
 
     if (distanceToPascha === -7) {
-        return 'Palm Sunday';
-    }
-
-    if (distanceToPascha === -8) {
-        return 'Lent Begins';
+        return {
+            id: 4,
+            title: "Palm Sunday",
+            description: ""
+        };
     }
 
     if (distanceToPascha === -49) {
-        return 'Cheesefare Sunday';
+        return {
+            id: 5,
+            title: "Cheesefare Sunday",
+            description: ""
+        };
     }
 
     if (distanceToPascha === -50) {
-        return 'Meatfare Sunday';
+        return {
+            id: 6,
+            title: "Meatfare Sunday",
+            description: ""
+        };
     }
 
     if (distanceToPascha === -51) {
-        return 'Judgment Sunday';
+        return {
+            id: 7,
+            title: "Judgment Sunday",
+            description: ""
+        };
     }
 
     if (distanceToPascha === -52) {
-        return 'Prodigal Son Sunday';
+        return {
+            id: 8,
+            title: "Prodigal Son Sunday",
+            description: ""
+        };
     }
 
     if (distanceToPascha === -53) {
-        return 'Publican & Pharisee Sunday';
+        return {
+            id: 9,
+            title: "Publican & Pharisee Sunday",
+            description: ""
+        };
     }
 
     if (distanceToPascha === -56) {
-        return 'Three Hierarchs';
+        return {
+            id: 10,
+            title: "Three Hierarchs",
+            description: ""
+        };
     }
 
     if (distanceToPascha === -57) {
-        return 'Theophany';
+        return {
+            id: 11,
+            title: "Theophany",
+            description: ""
+        };
     }
 
     // After Easter
 
     if (distanceToPascha === 1) {
-        return 'Bright Monday';
+        return {
+            id: 12,
+            title: "Bright Monday",
+            description: ""
+        };
     }
 
     if (distanceToPascha === 2) {
-        return 'Bright Tuesday';
+        return {
+            id: 13,
+            title: "Bright Tuesday",
+            description: ""
+        };
     }
 
     if (distanceToPascha === 39) {
-        return 'Ascension of Christ';
+        return {
+            id: 14,
+            title: "Ascension of Christ",
+            description: ""
+        };
     }
 
     if (distanceToPascha === 49) {
-        return 'Pentecost';
+        return {
+            id: 15,
+            title: "Pentecost",
+            description: ""
+        };
     }
 
     if (distanceToPascha === 50) {
-        return 'Monday of the Holy Spirit';
+        return {
+            id: 16,
+            title: "Monday of the Holy Spirit",
+            description: ""
+        };
     }
 
-    // Default title if no holiday is matched
-    return '';
+    // No match found, return undefined or null
+    return null;
 }
 
 function isEaster(date) {
@@ -151,11 +237,34 @@ export function isApostlesFast(date) {
     const easterDate = moment(calculateEasterFromYear(date.year()));
     const apostlesFastStartDate = easterDate.clone().add(57, 'days');
     const apostlesFastEndDate = moment({ year: date.year(), month: 6, day: 12 });
-  
     const isFast = date.isBetween(apostlesFastStartDate, apostlesFastEndDate, 'day', '[]');
-  
     return isFast;
   }
+
+  export function isDormitionFast(date) {
+    const dormitionStart = moment({year: date.year(), month: 7, day: 14 });
+    const dormitionEnd = moment({year: date.year(), month: 7, day: 27 });
+    const isFast = date.isBetween(dormitionStart, dormitionEnd, 'day', '[]');
+    return isFast;
+  }
+
+  export function isNativityFast(date) {
+    const nativityStart = moment({year: date.year(), month: 10, day: 28 });
+    const nativityEnd = moment({year: date.year() + 1, month: 0, day: 7 });
+    const isFast = date.isBetween(nativityStart, nativityEnd, 'day', '[]') || 
+        date.date() < nativityEnd.date() && date.month() === 0;
+    return isFast;
+  }
+
+  export function isGreatFast(date) {
+    const greatFastEnd = moment(calculateEasterFromYear(date.year())).add(-1, 'days');
+    const greatFastStart = greatFastEnd.clone().add(-49, 'days').startOf('isoWeek').add(1, 'weeks');
+
+
+    const isFast = date.isBetween(greatFastStart, greatFastEnd, 'day', '[]')
+    return isFast;
+  }
+  
   
   
   
@@ -168,6 +277,20 @@ function getFastingInfo(date) {
     if (isApostlesFast(date)) {
         return "Apostle's Fast"
     }
+
+    if (isDormitionFast(date)) {
+        return "Dormition Fast"
+    }
+
+    if (isNativityFast(date)) {
+        return "Nativity Fast"
+    }
+
+    if (isGreatFast(date)) {
+        return "Great Fast"
+    }
+
+
 
     // Placeholder, add more fasting checks here for other fasts
 

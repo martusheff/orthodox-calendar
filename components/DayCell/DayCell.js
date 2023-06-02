@@ -25,6 +25,7 @@ const DayCell = ({ dayData, emptyCell, toggleGridCollapse, handleDayCellTap  }) 
     handleDayCellTap(dayData);
   };
 
+
   return (
 
     <View style={styles.cell}>
@@ -37,7 +38,7 @@ const DayCell = ({ dayData, emptyCell, toggleGridCollapse, handleDayCellTap  }) 
         </View>
         <View style={styles.bottomContainer}>
           <View style={styles.iconWrapper}>
-            {dayData.title && <MaterialCommunityIcons name="cross" size={24} color="black" />}
+            {dayData.holidays.length > 0 && <MaterialCommunityIcons name="cross" size={24} color="black" />}
             {dayData.fastTitle && <MaterialCommunityIcons name="fish" size={24} color="black" />}
             {dayData.saints.length > 0 ? (
               dayData.saints.map((saint) => (

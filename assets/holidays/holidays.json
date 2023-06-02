@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "title": "Christmas",
+        "description": "The Nativity of Christ"
+    },
+    {
+        "id": 2,
+        "title": "Synaxis of the Mother of God",
+        "description": ""
+    },
+    {
+        "id": 3,
+        "title": "Circumcision of our Lord",
+        "description": ""
+    },
+    {
+        "id": 4,
+        "title": "Saint Basil the Great",
+        "description": ""
+    },
+    {
+        "id": 5,
+        "title": "Theophany",
+        "description": "Holy Theophane of the Lord"
+    },
+    {
+        "id": 6,
+        "title": "Saint John the Baptist",
+        "description": "Synaxis of Saint John the Baptist"
+    },
+    {
+        "id": 7,
+        "title": "Synaxis 3 Hierarchs",
+        "description": "Basil the Great, Gregory the Theologian, John Chrysostym"
+    },
+    {
+        "id": 8,
+        "title": "Christmas",
+        "description": "The Nativity of Christ"
+    },
+    {
+        "id": 9,
+        "title": "Presentation of Christ",
+        "description": "The meeting of the Lord, our God and Savior, Jesus Christ, in the Temple"
+    },
+    {
+        "id": 10,
+        "title": "Annunciation of the Mother of God",
+        "description": "Annunciaction Most Holy Theotokos"
+    }
+
+]
