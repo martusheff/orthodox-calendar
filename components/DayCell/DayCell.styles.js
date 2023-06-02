@@ -41,7 +41,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   names: {
-    fontSize: '7px'
+    fontSize: 7
   }
   
 

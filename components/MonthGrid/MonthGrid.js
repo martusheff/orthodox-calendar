@@ -65,7 +65,7 @@ const MonthGrid = () => {
   return (
     <SafeAreaView style={styles.container}>
       <TopBar title={isGridCollapsed ? selectedDayData.date.format("dddd, MMMM DD, YYYY") : currentDate.format('MMMM YYYY')} toggleGridCollapse={toggleGridCollapse} isExpanded={!isGridCollapsed} />
-     d
+     
       <GestureRecognizer
         onSwipeLeft={onSwipeLeft}
         onSwipeRight={onSwipeRight}
