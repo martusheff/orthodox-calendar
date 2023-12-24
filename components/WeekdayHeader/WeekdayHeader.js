@@ -8,8 +8,14 @@ const WeekdayHeader = () => {
   return (
     <View style={styles.row}>
       {days.map((day, index) => (
-        <View key={index} style={styles.cell}>
-          <Text>{day}</Text>
+        <View
+          key={index}
+          style={[
+            styles.cell,
+            index === 0 ? styles.firstCell : index === days.length - 1 ? styles.lastCell : styles.middleCell,
+            day === "Sun" ? styles.sunday : {}
+          ]}>
+          <Text style={[styles.title]}>{day.toUpperCase()}</Text>
         </View>
       ))}
     </View>
@@ -17,3 +23,4 @@ const WeekdayHeader = () => {
 }
 
 export default WeekdayHeader;
+

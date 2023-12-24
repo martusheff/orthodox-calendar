@@ -2,6 +2,30 @@ import DayData from './DayData';
 import { calculateEasterFromYear } from './easter-helper';
 import moment from 'moment';
 
+// Preload all month data at the top of your file
+const monthData = {
+    "1_2023": require('./assets/data/1_2023.json'),
+    "2_2023": require('./assets/data/2_2023.json'),
+    "3_2023": require('./assets/data/3_2023.json'),
+    "4_2023": require('./assets/data/4_2023.json'),
+    "5_2023": require('./assets/data/5_2023.json'),
+    "6_2023": require('./assets/data/6_2023.json'),
+    "7_2023": require('./assets/data/7_2023.json'),
+    "8_2023": require('./assets/data/8_2023.json'),
+    "9_2023": require('./assets/data/9_2023.json'),
+    "10_2023": require('./assets/data/10_2023.json'),
+    "11_2023": require('./assets/data/11_2023.json'),
+    "12_2023": require('./assets/data/12_2023.json'),
+    // ... other months ...
+};
+
+export function getNewDayData(date) {
+    const monthKey = `${date.month() + 1}_2023`;
+    console.log("ZAMBOO")
+    console.log(monthKey)
+    const localDayData = monthData[monthKey]; // Access the preloaded data
+    return localDayData[`${date.month() + 1}/${date.date()}/2023`]; // Adjust according to how your data is structured
+}
 
 export function getDayData(date) {
     const events = [];  // Placeholder, fetch actual events here
