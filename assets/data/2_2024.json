@@ -1,96 +1,96 @@
 {
-    "2/1/2023": {
+    "2/1/2024": {
       "month": 2,
       "day": 1,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 19,
-      "saints": ["St. Macarius the Egyptian"],
+      "saints": ["Macarius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/2/2023": {
+    "2/2/2024": {
       "month": 2,
       "day": 2,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 1,
       "cc_day": 20,
-      "saints": ["St. Euthymius the Great"],
+      "saints": ["Euthymius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "2/3/2023": {
+    "2/3/2024": {
       "month": 2,
       "day": 3,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 21,
-      "saints": ["St. Maximus the Confessor", "Martyr Neophytus", "Martys Eugene of Trebizond"],
+      "saints": ["Maximus", " Neophytus", "Eugene"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/4/2023": {
+    "2/4/2024": {
       "month": 2,
       "day": 4,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 22,
-      "saints": ["Apostle Timothy of the Seventy", "Martyr Anastasius the Persian"],
+      "saints": ["Timothy", "Anastasius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/5/2023": {
+    "2/5/2024": {
       "month": 2,
       "day": 5,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 23,
-      "saints": ["Hieromartyr Clement of Ancyra", "Martyr Agathangelus"],
+      "saints": ["Clement", "Agathangelus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/6/2023": {
+    "2/6/2024": {
       "month": 2,
       "day": 6,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 24,
-      "saints": ["St. Xenia of Rome"],
+      "saints": ["Xenia"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/7/2023": {
+    "2/7/2024": {
       "month": 2,
       "day": 7,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 1,
       "cc_day": 25,
-      "saints": ["St. Gregory the Theologian"],
+      "saints": ["Gregory"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "2/8/2023": {
+    "2/8/2024": {
       "month": 2,
       "day": 8,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 26,
-      "saints": ["St. Xenophon", "St. Mary", "St Theodore of Studion"],
+      "saints": ["Xenophon", "Mary", "Theodore"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/9/2023": {
+    "2/9/2024": {
       "month": 2,
       "day": 9,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 1,
       "cc_day": 27,
       "saints": [],
@@ -98,65 +98,65 @@
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "2/10/2023": {
+    "2/10/2024": {
       "month": 2,
       "day": 10,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 28,
-      "saints": ["St. Isaac the Syrian", "St. Ephraim of Novotorzhk"],
+      "saints": ["Isaac", "Ephraim"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/11/2023": {
+    "2/11/2024": {
       "month": 2,
       "day": 11,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 29,
-      "saints": ["Hieromartyr Ignatius the God-bearer"],
+      "saints": ["Ignatius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/12/2023": {
+    "2/12/2024": {
       "month": 2,
       "day": 12,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 30,
       "saints": ["Hieromartyr Hippolytus"],
-      "isHoliday": false,
-      "holiday_description": null,
+      "isHoliday": true,
+      "holiday_description": "Basil",
       "day_indicator_level": 2
     },
-    "2/13/2023": {
+    "2/13/2024": {
       "month": 2,
       "day": 13,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 31,
-      "saints": ["Holy Unmercenaries Cyrus & John", "Hierarch Nikita of Novgorod"],
+      "saints": ["Cyrus", "John", "Nikita"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "2/14/2023": {
+    "2/14/2024": {
       "month": 2,
       "day": 14,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 1,
       "cc_day": 1,
-      "saints": ["Martyr Tryphon"],
+      "saints": ["Tryphon"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/15/2023": {
+    "2/15/2024": {
       "month": 2,
       "day": 15,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 2,
       "saints": [],
@@ -164,156 +164,156 @@
       "holiday_description": "The Meeting of the Lord, Our God, and Savior Jesus Christ",
       "day_indicator_level": 1
     },
-    "2/16/2023": {
+    "2/16/2024": {
       "month": 2,
       "day": 16,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 1,
       "cc_day": 3,
-      "saints": ["Righteous Simeon the God-receiver", "Righteous Anna the Prophetess"],
+      "saints": ["Simeon", "Anna"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/17/2023": {
+    "2/17/2024": {
       "month": 2,
       "day": 17,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 4,
-      "saints": ["St. Isidore of Pelusium", "St. Cyril of Byelonovoozersk"],
+      "saints": ["Isidore", "Cyril"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 5
     },
-    "2/18/2023": {
+    "2/18/2024": {
       "month": 2,
       "day": 18,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 5,
-      "saints": ["Martyr Agatha"],
+      "saints": ["Agatha"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/19/2023": {
+    "2/19/2024": {
       "month": 2,
       "day": 19,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 6,
-      "saints": ["St. Bucolus of Smyrna"],
+      "saints": ["Bucolus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/20/2023": {
+    "2/20/2024": {
       "month": 2,
       "day": 20,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 7,
-      "saints": ["St. Parthenius of Lampascus", "St. Luke of Hellas"],
+      "saints": ["Parthenius", "Luke"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/21/2023": {
+    "2/21/2024": {
       "month": 2,
       "day": 21,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 1,
       "cc_day": 8,
-      "saints": ["Great Martyr Theodore Stratelates", "Prophet Zachariah"],
+      "saints": [" Theodore", "Zachariah"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/22/2023": {
+    "2/22/2024": {
       "month": 2,
       "day": 22,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 9,
-      "saints": ["Martyr Nicephorus of Antioch"],
+      "saints": ["Nicephorus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "2/23/2023": {
+    "2/23/2024": {
       "month": 2,
       "day": 23,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 1,
       "cc_day": 10,
-      "saints": ["Martyr Charalampus"],
+      "saints": ["Charalampus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/24/2023": {
+    "2/24/2024": {
       "month": 2,
       "day": 24,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 11,
-      "saints": ["St. Dimitry of Priluki", "St. Gabriel of Pskov"],
+      "saints": ["Dimitry", "Gabriel"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 5
     },
-    "2/25/2023": {
+    "2/25/2024": {
       "month": 2,
       "day": 25,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 12,
-      "saints": ["St. Alexis of Kiev", "St. Meletius of Antioch"],
+      "saints": ["Alexis", "Meletius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "2/26/2023": {
+    "2/26/2024": {
       "month": 2,
       "day": 26,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 13,
-      "saints": ["St. Martinian"],
+      "saints": ["Martinian"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/27/2023": {
+    "2/27/2024": {
       "month": 2,
       "day": 27,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 14,
-      "saints": ["St. Michael of Chernigrov", "St. Cyril of Catania", "St. Auxentius"],
+      "saints": ["Michael", "Cyril", "Auxentius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 5
     },
-    "2/28/2023": {
+    "2/28/2024": {
       "month": 2,
       "day": 28,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 15,
-      "saints": ["Apostle Onesimus"],
+      "saints": ["Onesimus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "2/29/2023": {
+    "2/29/2024": {
       "month": 2,
       "day": 28,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 16,
-      "saints": ["Apostle Onesimus"],
+      "saints": ["Onesimus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0

@@ -20,4 +20,8 @@ export default StyleSheet.create({
     row: {
         flexDirection: 'row',
     },
+    pageRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    }
 });

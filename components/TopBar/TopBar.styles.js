@@ -68,6 +68,13 @@ export default StyleSheet.create({
         fontSize: 16,
         textAlign: 'center',
         fontFamily: 'TimesNewRoman',
+    },
+    divider: {
+        height: 15,
+        width: '100%',
+        resizeMode: 'contain',
+        tintColor: '#ee018c',
+
     }
 
 });

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, SafeAreaView } from 'react-native';
+import { View, SafeAreaView, TouchableOpacity } from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import DayCell from '../DayCell/DayCell';
 import WeekdayHeader from '../WeekdayHeader/WeekdayHeader'
@@ -12,6 +12,9 @@ import { getDayData } from '../../DayDataHelper';
 import Collapsible from 'react-native-collapsible';
 import DayView from '../DayView/DayView';
 import { PageIndicator } from 'react-native-page-indicator';
+import { MaterialIcons } from '@expo/vector-icons';
+import ReactNativeHapticFeedback from "react-native-haptic-feedback";
+import Settings from '../Settings/Settings';
 
 
 export const DayCellPosition = {
@@ -33,8 +36,8 @@ const MonthGrid = () => {
   const [currentDate, setCurrentDate] = useState(moment());
   const [isGridCollapsed, setIsGridCollapsed] = useState(false);
   const [selectedDayData, setSelectedDayData] = useState(null);
+  const [showSettings, setShowSettings] = useState(false);
   const [selectedNewDayData, setSelectedNewDayData] = useState(null);
-
   // const onSwipeLeft = () => setCurrentDate(currentDate.clone().add(1, 'month'));
   // const onSwipeRight = () => setCurrentDate(currentDate.clone().subtract(1, 'month'));
 
@@ -46,7 +49,7 @@ const MonthGrid = () => {
       setCurrentDate(nextMonth); // Update the current date only if it's within 2024
     }
   };
-  
+
   const onSwipeRight = () => {
     // Clone and subtract 1 month from the current date
     const prevMonth = currentDate.clone().subtract(1, 'month');
@@ -55,7 +58,7 @@ const MonthGrid = () => {
       setCurrentDate(prevMonth); // Update the current date only if it's within 2024
     }
   };
-  
+
 
   const daysInMonth = Array.from({ length: currentDate.daysInMonth() }, (_, i) => i + 1);
   const startWeekDay = currentDate.clone().startOf('month').day();
@@ -66,29 +69,30 @@ const MonthGrid = () => {
     setIsGridCollapsed(!isGridCollapsed);
   };
 
-  const handleDayCellTap = (dayData) => {
+  const handleDayCellTap = (dayData, newDayData) => {
     setSelectedDayData(dayData);
+    setSelectedNewDayData(newDayData)
   };
 
   const getCellPosition = (i, j, dim, r) => {
-    console.log("I: " + i)
-    console.log("J: " + j)
-    console.log("\n")
-    if(i == 1) {
-      if(j == 0) {
+    // console.log("I: " + i)
+    // console.log("J: " + j)
+    // console.log("\n")
+    if (i == 1) {
+      if (j == 0) {
         return DayCellPosition.FIRST_FIRST;
       }
-      if(j == 6) {
+      if (j == 6) {
         return DayCellPosition.FIRST_LAST;
       }
       return r > 1 && r < 35 ? DayCellPosition.CENTER_LEFT : DayCellPosition.LEFT;
-    } else if(i == dim.length) {
+    } else if (i == dim.length) {
       return r > 1 && r < 35 ? DayCellPosition.CENTER_LAST : DayCellPosition.LAST;
-    } else if(j % 7 == 0) {
+    } else if (j % 7 == 0) {
       return r > 1 && r < 35 ? j < 8 ? DayCellPosition.CENTER_LEFT_LEADING : DayCellPosition.CENTER_LEFT : DayCellPosition.LEFT;
-    } else if(j % 7 == 6) {
+    } else if (j % 7 == 6) {
       return r > 1 && r < 35 ? DayCellPosition.CENTER_RIGHT : DayCellPosition.RIGHT;
-    } else if(i < 8) {
+    } else if (i < 8) {
       print("WERE IN THE MIDDLE")
       return DayCellPosition.CENTER_MIDDLE_LEADING;
     }
@@ -113,9 +117,6 @@ const MonthGrid = () => {
       const newDayData = isWithinMonth ? getNewDayData(date) : null;
       const pos = getCellPosition(dayNumber, j, daysInMonth, i)
 
-      console.log("ABC1234:")
-      console.log(newDayData)
-
       row.push(
         <DayCell key={j} dayData={dayData} newDayData={newDayData} emptyCell={!isWithinMonth} toggleGridCollapse={toggleGridCollapse} handleDayCellTap={handleDayCellTap} pos={pos} />
       );
@@ -130,7 +131,7 @@ const MonthGrid = () => {
   // console.log(selectedDayData)
   return (
     <SafeAreaView style={styles.container}>
-      <TopBar title={isGridCollapsed ? selectedDayData.date.format("MMM DD") : currentDate.format('MMMM')} toggleGridCollapse={toggleGridCollapse} isExpanded={!isGridCollapsed} />
+      <TopBar title={isGridCollapsed ? showSettings ? "About" : selectedDayData.date.format("MMM DD") : currentDate.format('MMMM')} toggleGridCollapse={toggleGridCollapse} isExpanded={!isGridCollapsed} setIsShowSettings={setShowSettings} />
 
       <GestureRecognizer
         onSwipeLeft={onSwipeLeft}
@@ -138,9 +139,24 @@ const MonthGrid = () => {
         style={{ flex: 1 }}
       >
         {grid}
-        {isGridCollapsed && <DayView dayData={selectedDayData}></DayView>}
+
+        {isGridCollapsed ? showSettings ? <Settings></Settings> : <DayView dayData={selectedDayData} newDayData={selectedNewDayData}></DayView> : null}
       </GestureRecognizer>
-      <PageIndicator variant='train' count={12} current={currentDate.month()} />
+      {
+        !isGridCollapsed &&
+        <View style={styles.pageRow}>
+          <TouchableOpacity onPress={onSwipeRight}>
+            <MaterialIcons name="arrow-left" size={36} color="rgba(0,0,0,0.7)" />
+
+          </TouchableOpacity>
+
+          <PageIndicator variant='train' count={12} current={currentDate.month()} />
+          <TouchableOpacity onPress={onSwipeLeft}>
+            <MaterialIcons name="arrow-right" size={36} color="rgba(0,0,0,0.7)" />
+          </TouchableOpacity>
+        </View>
+      }
+
     </SafeAreaView>
   );
 };

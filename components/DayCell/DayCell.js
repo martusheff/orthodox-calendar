@@ -4,15 +4,11 @@ import styles from "./DayCell.styles";
 import { useNavigation } from '@react-navigation/native';
 import { SharedElement } from 'react-navigation-shared-element';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
-
+import { getSaintData } from '../../DayDataHelper';
 
 const EmptyDayCell = () => (
-  <View style={styles.emptyCell}>
-
-  </View>
+  <View style={styles.emptyCell}/>
 );
-
 
 const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDayCellTap, pos }) => {
   if (emptyCell) {
@@ -23,14 +19,14 @@ const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDay
 
   const handlePress = () => {
     toggleGridCollapse();
-    handleDayCellTap(dayData);
+    handleDayCellTap(dayData, newDayData);
   };
-
-
 
   const getFastIcon = (fl) => {
 
     switch (fl) {
+      case 0:
+        return require('../../assets/images/blank.png')
       case 1:
         return require('../../assets/images/fish.png')
       case 2:
@@ -48,17 +44,25 @@ const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDay
     }
   }
 
-  console.log("FOOBARR:")
-  console.log(newDayData)
+  let date = new Date(dayData.date)
+  const today = new Date();
+
+  const isToday = today.getDate() === date.getDate() &&
+    today.getMonth() === date.getMonth() &&
+    today.getFullYear() === date.getFullYear();
+
+  
+    const saints = getSaintData(dayData.date)
+
 
   return (
-    <View style={[styles.cell, styles[pos], newDayData.isHoliday  ? styles.holidayCell : {}]}>
+    <View style={[styles.cell, styles[pos], newDayData.isHoliday || date.getDay() === 0 ? styles.holidayCell : {}]}>
       <TouchableOpacity onPress={handlePress}>
         <View style={styles.topContainer}>
-          <View style={styles.topLeftQuadrant}>
-            <Text style={styles.topLeftDate}>{dayData.date.date()}</Text>
+          <View style={[styles.topLeftQuadrant, isToday ? styles.todayIndicator : {}]}>
+            <Text style={[styles.topLeftDate, isToday ? styles.todayIndicator : {}]}>{dayData.date.date()}</Text>
           </View>
-          <View style={styles.topRightQuadrant}>
+          <View style={[styles.topRightQuadrant]}>
             <View style={styles.topRightQuadrantTop}>
               <Text style={styles.topRightDate}>{newDayData.cc_day}</Text>
             </View>
@@ -71,20 +75,19 @@ const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDay
         <View style={styles.bottomContainer}>
           <View style={styles.iconWrapper}>
             <View>
-              {newDayData.fast_level != 0 && <Image source={getFastIcon(newDayData.fast_level)} style={[{ width: 20, height: 20, marginTop: 4 }]} />}
+              { <Image source={getFastIcon(newDayData.fast_level)} style={[{ width: 20, height: 20, marginTop: 4 }]} />}
+            </View>
+            <View>
+              {newDayData.isHoliday && <Text style={styles.holiday}>{newDayData.holiday_description}</Text>}
             </View>
             <View style={styles.saintsWrapper}>
               {
-                newDayData.saints.slice(0, 2).map((saint) => (
-                  <Text style={styles.names} key={saint}>{saint}</Text>
+                saints.map((saint, i) => (
+                  <Text style={styles.names} key={`${saint}${i}`} >{saint.name}</Text>
                 ))
               }
-
             </View>
-
-
           </View>
-
         </View>
       </TouchableOpacity>
     </View>

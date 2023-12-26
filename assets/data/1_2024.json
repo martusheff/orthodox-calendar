@@ -1,109 +1,109 @@
 {
-    "1/1/2023": {
+    "1/1/2024": {
       "month": 1,
       "day": 1,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 1,
       "cc_day": 19,
       "saints": [
-       "Sun. Before Nativity: The Holy Fathers 29 after Pentecost Tone 4 Sun. Gspl. 7*", "Martyr Boniface"
+       "Sun. Before Nativity: The Holy Fathers 29 after Pentecost Tone 4 Sun. Gspl. 7*", "Boniface"
       ],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/2/2023": {
+    "1/2/2024": {
       "month": 1,
       "day": 2,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 2,
       "cc_day": 20,
-      "saints": ["Forefeast of the Nativity of Christ**", "Hieromartyr Ignatius the God-bearer"],
+      "saints": ["Forefeast of the Nativity of Christ**", "Ignatius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/3/2023": {
+    "1/3/2024": {
       "month": 1,
       "day": 3,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 3,
       "cc_day": 21,
-      "saints": ["Forefeast of the Nativity of Christ**", "Martyr Juliana of Nicomedia", "St. Peter of Kiev**"],
+      "saints": ["Forefeast of the Nativity of Christ**", "Juliana", "Peter"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "1/4/2023": {
+    "1/4/2024": {
       "month": 1,
       "day": 4,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 3,
       "cc_day": 22,
-      "saints": ["Forefeast of the Nativity of Christ**", "Great Martyr Anastasia, Releaser from Bonds"],
+      "saints": ["Forefeast of the Nativity of Christ**", "Anastasia"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/5/2023": {
+    "1/5/2024": {
       "month": 1,
       "day": 5,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 3,
       "cc_day": 23,
-      "saints": ["Forefeast of the Nativity of Christ**", "10 Martyrs of Crete", "10 Martyrs of Crete", "St. Philip of Moscow**"],
+      "saints": ["Forefeast of the Nativity of Christ**", "10 Martyrs of Crete", "Philip"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "1/6/2023": {
+    "1/6/2024": {
       "month": 1,
       "day": 6,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 6,
       "cc_day": 24,
-      "saints": ["Forefeast of the Nativity of Christ**", "Royal Hours*", "Non Martyr Eugenia", "Strict Fast*"],
+      "saints": ["Forefeast of the Nativity of Christ**", "Royal Hours*", "Eugenia", "Strict Fast*"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/7/2023": {
+    "1/7/2024": {
       "month": 1,
       "day": 7,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 25,
       "saints": [],
       "isHoliday": true,
-      "holiday_description": "The Nativity of Christ (Christmas)",
+      "holiday_description": "Christmas",
       "day_indicator_level": 1
     },
-    "1/8/2023": {
+    "1/8/2024": {
       "month": 1,
       "day": 8,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 26,
-      "saints": ["Sun. 30 after Pentecost Tone 5 Sun Gsp 8*", "Synaxis of the Mother of God*", "St. Joseph the Betrothed", "St. Euthymius"],
+      "saints": ["Sun. 30 after Pentecost Tone 5 Sun Gsp 8*", "Synaxis of the Mother of God*", "Joseph", "Euthymius"],
       "isHoliday": true,
       "holiday_description": "Sunday after Nativity",
       "day_indicator_level": 2
     },
-    "1/9/2023": {
+    "1/9/2024": {
       "month": 1,
       "day": 9,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 27,
-      "saints": ["Protomartyr Stephen", "St. Theodor Graptus"],
+      "saints": ["Stephen", "Theodor"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/10/2023": {
+    "1/10/2024": {
       "month": 1,
       "day": 10,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 28,
       "saints": ["20,000 Martyrs of Nicomedia"],
@@ -111,98 +111,98 @@
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/11/2023": {
+    "1/11/2024": {
       "month": 1,
       "day": 11,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 29,
-      "saints": ["14,000 Holy Innocents of Bethlehem", "St. Marcellus"],
+      "saints": ["14,000 Innocents of Bethlehem", "Marcellus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/12/2023": {
+    "1/12/2024": {
       "month": 1,
       "day": 12,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 30,
-      "saints": ["Virgin Martyr Anysia", "St. Zoticus, Feeder of Lepers"],
+      "saints": ["Anysia", "Zoticus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/13/2023": {
+    "1/13/2024": {
       "month": 1,
       "day": 13,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 31,
-      "saints": ["Last day of the Feast of the Nativity**", "Holy Nun Melania the Roman"],
+      "saints": ["Last day of the Feast of the Nativity**", "Melania"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "1/14/2023": {
+    "1/14/2024": {
       "month": 1,
       "day": 15,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 1,
-      "saints": ["St. Basil the Great*", "Saturday before Theophany**"],
+      "saints": ["Basil*", "Saturday before Theophany**"],
       "isHoliday": true,
       "holiday_description": "Circumcision of our Lord",
       "day_indicator_level": 4
     },
-    "1/15/2023": {
+    "1/15/2024": {
       "month": 1,
       "day": 15,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 2,
-      "saints": ["Sun. before Theophany*", "Sun. 31 after Penecost Tone 6 Gspl. 9*", "Forefeast of Theophany**", "St. Sylvester of Rome"],
+      "saints": ["Sun. before Theophany*", "Sun. 31 after Penecost Tone 6 Gspl. 9*", "Forefeast of Theophany**", "Sylvester"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/16/2023": {
+    "1/16/2024": {
       "month": 1,
       "day": 16,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 3,
-      "saints": ["Prophet Malachias", "Hieromartyr Gordius"],
+      "saints": ["Malachias", "Gordius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/17/2023": {
+    "1/17/2024": {
       "month": 1,
       "day": 17,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 4,
-      "saints": ["Synaxis of 70 Apostles", "St. Theoctistus of Cucomo in Sicily"],
+      "saints": ["Synaxis of 70 Apostles", "Theoctistus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/18/2023": {
+    "1/18/2024": {
       "month": 1,
       "day": 18,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 6,
       "cc_day": 5,
-      "saints": ["Royal Hours**", "Holy Nun Syncletica", "Hieromartyrs Theopemptus & Theonas", "Great Blessing of the Holy Water**"],
+      "saints": ["Royal Hours**", "Syncletica", "Theopemptus", "Theonas", "Great Blessing of the Holy Water**"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/19/2023": {
+    "1/19/2024": {
       "month": 1,
       "day": 19,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 6,
       "saints": ["Blessing of the Holy Water"],
@@ -210,10 +210,10 @@
       "holiday_description": "Holy Theophany of the Lord",
       "day_indicator_level": 1
     },
-    "1/20/2023": {
+    "1/20/2024": {
       "month": 1,
       "day": 20,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 7,
       "saints": [],
@@ -221,123 +221,123 @@
       "holiday_description": "Synaxis of John the Baptist",
       "day_indicator_level": 2
     },
-    "1/21/2023": {
+    "1/21/2024": {
       "month": 1,
       "day": 21,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 8,
-      "saints": ["Saturday after Theophany**", "St. George the Chozebite", "Holy Nun Domnica", "St. Emelian the Confessor"],
+      "saints": ["Saturday after Theophany**", "George", "Domnica", "Emelian"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/22/2023": {
+    "1/22/2024": {
       "month": 1,
       "day": 22,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 9,
-      "saints": ["Sunday after Theophany**", "Sun. 32 after Pentecost Tone 7 Sun. Gspl. 10*", "Martyr Polyeuctus"],
+      "saints": ["Sunday after Theophany**", "Sun. 32 after Pentecost Tone 7 Sun. Gspl. 10*", "Polyeuctus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/23/2023": {
+    "1/23/2024": {
       "month": 1,
       "day": 23,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 10,
-      "saints": ["St. Gregory of Nyssa", "St. Dometian of Melitene", "St. Markiana"],
+      "saints": ["Gregory", "Dometian", "Markiana"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "1/24/2023": {
+    "1/24/2024": {
       "month": 1,
       "day": 24,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 1,
       "cc_day": 11,
-      "saints": ["St. Theodosius the Cenobiarch**", "St. Michael Klops of Novgorod**"],
+      "saints": ["Theodosius**", "Michael**"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 5
     },
-    "1/25/2023": {
+    "1/25/2024": {
       "month": 1,
       "day": 25,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 12,
-      "saints": ["Martyr Tatiana"],
+      "saints": ["Tatiana"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/26/2023": {
+    "1/26/2024": {
       "month": 1,
       "day": 26,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 1,
       "cc_day": 13,
-      "saints": ["Martyr Hermylus", "Martyr Stratonicus"],
+      "saints": ["Hermylus", "Stratonicus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/27/2023": {
+    "1/27/2024": {
       "month": 1,
       "day": 27,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 14,
-      "saints": ["Last day of the Feast of Theophany**", "Monastic Martyrs of Sinai & Raithu", "St. Sava Teacher of the Serbs**"],
+      "saints": ["Last day of the Feast of Theophany**", "Martyrs of Sinai & Raithu", "Sava**"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 5
     },
-    "1/28/2023": {
+    "1/28/2024": {
       "month": 1,
       "day": 28,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 15,
-      "saints": ["St. Paul of Thebes", "St. John the Hut-Dweller"],
+      "saints": ["Paul", "John"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/29/2023": {
+    "1/29/2024": {
       "month": 1,
       "day": 29,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 16,
-      "saints": ["Sun. 33 after Pentecost Tone 8 Sun. Gsp. 11*", "The Chains of the Apostle Peter"],
+      "saints": ["Sun. 33 after Pentecost Tone 8 Sun. Gsp. 11*", "Peter"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "1/30/2023": {
+    "1/30/2024": {
       "month": 1,
       "day": 30,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 0,
       "cc_day": 17,
-      "saints": ["St. Anthony the Great**", "St. Anthony the Roman of Novgorod**"],
+      "saints": ["Anthony**", "Anthony**"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 5
     },
-    "1/31/2023": {
+    "1/31/2024": {
       "month": 1,
       "day": 31,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 1,
       "cc_day": 18,
-      "saints": ["St. Atanasius the Great", "St. Cyril of Alexandria"],
+      "saints": ["Atanasius", "Cyril"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0

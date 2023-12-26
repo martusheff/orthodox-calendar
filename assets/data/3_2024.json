@@ -1,217 +1,217 @@
 {
-    "3/1/2023": {
+    "3/1/2024": {
       "month": 3,
       "day": 1,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 0,
       "cc_day": 17,
-      "saints": ["Martyr Pamphilus", "Martyr Porphyrius"],
+      "saints": ["Pamphilus", "Porphyrius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/2/2023": {
+    "3/2/2024": {
       "month": 3,
       "day": 2,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 0,
       "cc_day": 18,
-      "saints": ["Great Martyr Theodore Tyro"],
+      "saints": ["Theodore"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/3/2023": {
+    "3/3/2024": {
       "month": 3,
       "day": 3,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 0,
       "cc_day": 19,
-      "saints": ["St. Leontius of Rome"],
+      "saints": ["Leontius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/4/2023": {
+    "3/4/2024": {
       "month": 3,
       "day": 4,
-      "year": 2023,
-      "fast_level": 2,
+      "year": 2024,
+      "fast_level": 0,
       "cc_day": 20,
-      "saints": ["Apostle Archippus", "St. Theodore Tyro"],
+      "saints": ["Archippus", "Theodore"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/5/2023": {
+    "3/5/2024": {
       "month": 3,
       "day": 5,
-      "year": 2023,
-      "fast_level": 2,
+      "year": 2024,
+      "fast_level": 0,
       "cc_day": 21,
-      "saints": ["St. Leo of Catania"],
+      "saints": ["Leo"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/6/2023": {
+    "3/6/2024": {
       "month": 3,
       "day": 6,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 3,
       "cc_day": 22,
-      "saints": ["St. Timothy of Symbola", "St. Eustathius of Antioch"],
+      "saints": ["Timothy", "Eustathius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/7/2023": {
+    "3/7/2024": {
       "month": 3,
       "day": 7,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 0,
       "cc_day": 23,
       "saints": ["Martyrs at the Gates of Eugenius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/8/2023": {
+    "3/8/2024": {
       "month": 3,
       "day": 8,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 3,
       "cc_day": 24,
-      "saints": ["Hieromartyr Polycarp of Smyrna"],
-      "isHoliday": false,
-      "holiday_description": null,
+      "saints": ["Polycarp"],
+      "isHoliday": true,
+      "holiday_description": "1st & 2nd Finding of the Head of St John the Baptist",
       "day_indicator_level": 0
     },
-    "3/9/2023": {
+    "3/9/2024": {
       "month": 3,
       "day": 9,
-      "year": 2023,
-      "fast_level": 2,
+      "year": 2024,
+      "fast_level": 0,
       "cc_day": 25,
       "saints": [],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "3/10/2023": {
+    "3/10/2024": {
       "month": 3,
       "day": 10,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 0,
       "cc_day": 26,
-      "saints": ["St. Tarasius of Constantinople"],
+      "saints": ["Tarasius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/11/2023": {
+    "3/11/2024": {
       "month": 3,
       "day": 11,
-      "year": 2023,
-      "fast_level": 2,
+      "year": 2024,
+      "fast_level": 4,
       "cc_day": 27,
-      "saints": ["St. Porphyrius of Gaza"],
+      "saints": ["Porphyrius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/12/2023": {
+    "3/12/2024": {
       "month": 3,
       "day": 12,
-      "year": 2023,
-      "fast_level": 2,
+      "year": 2024,
+      "fast_level": 4,
       "cc_day": 28,
-      "saints": ["St. Gregory Palamas", "St. Procopis of the Decapolis"],
+      "saints": ["Gregory", "Procopis"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/13/2023": {
+    "3/13/2024": {
       "month": 3,
       "day": 13,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 4,
       "cc_day": 29,
-      "saints": ["St. Basil the Confessor", "Hieromartyr Proterius of Alexandria"],
+      "saints": ["Basil", "Proterius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/14/2023": {
+    "3/14/2024": {
       "month": 3,
       "day": 14,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 4,
       "cc_day": 1,
-      "saints": ["Martyr Eudoxia of Heliopolis"],
+      "saints": ["Eudoxia"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/15/2023": {
+    "3/15/2024": {
       "month": 3,
       "day": 15,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 4,
       "cc_day": 2,
-      "saints": ["Hieromartyr Theodotus of Cyrenia"],
+      "saints": ["Theodotus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "3/16/2023": {
+    "3/16/2024": {
       "month": 3,
       "day": 16,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 4,
       "cc_day": 3,
-      "saints": ["Martyr Eutropius", "Martyr Cleonicus", "Martyr Basiliscus"],
+      "saints": ["Eutropius", "Cleonicus", "Basiliscus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/17/2023": {
+    "3/17/2024": {
       "month": 3,
       "day": 17,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 4,
       "cc_day": 4,
-      "saints": ["St. Gerasimus of the Jordan", "Martyr Paul", "Martyr Juliana"],
+      "saints": ["Gerasimus", "Paul", "Juliana"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/18/2023": {
+    "3/18/2024": {
       "month": 3,
       "day": 18,
-      "year": 2023,
-      "fast_level": 2,
+      "year": 2024,
+      "fast_level": 3,
       "cc_day": 5,
-      "saints": ["Martyr Conon of Isauria"],
+      "saints": ["Conon"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/19/2023": {
+    "3/19/2024": {
       "month": 3,
       "day": 19,
-      "year": 2023,
-      "fast_level": 2,
+      "year": 2024,
+      "fast_level": 3,
       "cc_day": 6,
       "saints": ["42 Martyrs of Ammoria"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/20/2023": {
+    "3/20/2024": {
       "month": 3,
       "day": 20,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 3,
       "cc_day": 7,
       "saints": ["7 Hieromartyrs of Cherson"],
@@ -219,21 +219,21 @@
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/21/2023": {
+    "3/21/2024": {
       "month": 3,
       "day": 21,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 3,
       "cc_day": 8,
-      "saints": ["St. Theophylactus of Nicomedia"],
+      "saints": ["Theophylactus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/22/2023": {
+    "3/22/2024": {
       "month": 3,
       "day": 22,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 3,
       "cc_day": 9,
       "saints": [],
@@ -241,101 +241,101 @@
       "holiday_description": "Holy 40 Great Martyrs of Sebaste",
       "day_indicator_level": 3
     },
-    "3/23/2023": {
+    "3/23/2024": {
       "month": 3,
       "day": 23,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 2,
       "cc_day": 10,
-      "saints": ["Martyr Quadratus and Companions"],
+      "saints": ["Quadratus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/24/2023": {
+    "3/24/2024": {
       "month": 3,
       "day": 24,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 2,
       "cc_day": 11,
-      "saints": ["St. Euthymius of Novgorod", "St. Sophronius of Jerusalem"],
+      "saints": ["Euthymius", "Sophronius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "3/25/2023": {
+    "3/25/2024": {
       "month": 3,
       "day": 25,
-      "year": 2023,
-      "fast_level": 2,
+      "year": 2024,
+      "fast_level": 3,
       "cc_day": 12,
-      "saints": ["St. Theophanes the Confessor", "St. Gregory of Rome"],
+      "saints": ["Theophanes", "Gregory"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/26/2023": {
+    "3/26/2024": {
       "month": 3,
       "day": 26,
-      "year": 2023,
-      "fast_level": 2,
+      "year": 2024,
+      "fast_level": 3,
       "cc_day": 13,
-      "saints": ["St. Nicephorus of Constantinople"],
+      "saints": ["Nicephorus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/27/2023": {
+    "3/27/2024": {
       "month": 3,
       "day": 27,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 3,
       "cc_day": 14,
-      "saints": ["St. Benedict of Nursia"],
+      "saints": ["Benedict"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/28/2023": {
+    "3/28/2024": {
       "month": 3,
       "day": 28,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 3,
       "cc_day": 15,
-      "saints": ["Martyr Agapius and the 7 with Him"],
+      "saints": ["Agapius"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/29/2023": {
+    "3/29/2024": {
       "month": 3,
       "day": 29,
-      "year": 2023,
+      "year": 2024,
       "fast_level": 3,
       "cc_day": 16,
-      "saints": ["Martyr Sabinus of Egypt"],
+      "saints": ["Sabinus"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0
     },
-    "3/30/2023": {
+    "3/30/2024": {
       "month": 3,
       "day": 30,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 2,
       "cc_day": 17,
-      "saints": ["St. Alexis the Man of God", "St. Makary of Kalyazinsk"],
+      "saints": ["Alexis", "Makary"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 3
     },
-    "3/31/2023": {
+    "3/31/2024": {
       "month": 3,
       "day": 31,
-      "year": 2023,
-      "fast_level": 3,
+      "year": 2024,
+      "fast_level": 2,
       "cc_day": 18,
-      "saints": ["St. Cyril of Jerusalem", "Martyrs Alexandra, Claudia, Euphrasia, Matrona, Juliana, Euphemia & Theodosia"],
+      "saints": ["Cyril", "Alexandra",  "Claudia", "Euphrasia", "Matrona", "Juliana", "Euphemia", "Theodosia"],
       "isHoliday": false,
       "holiday_description": null,
       "day_indicator_level": 0

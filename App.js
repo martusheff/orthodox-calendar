@@ -17,6 +17,7 @@ const Stack = createSharedElementStackNavigator();
 
 const fetchFonts = () => {
   return Font.loadAsync({
+    'TimesNewRomanBold': require('./assets/fonts/TimesNewRomanBold.ttf'),
     'TimesNewRoman': require('./assets/fonts/TimesNewRoman.ttf'), // Update with the correct path to your Times New Roman font file
     'Algerian': require('./assets/fonts/Algerian.otf'), // Update with the correct path to your Times New Roman font file
 

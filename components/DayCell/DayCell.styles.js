@@ -57,9 +57,21 @@ export default StyleSheet.create({
   names: {
     fontSize: 6.5,
     textAlign: 'center',
-    fontFamily: 'TimesNewRoman'
+    fontFamily: 'TimesNewRoman',
+    paddingHorizontal: 2
   },
-
+  holiday: {
+    fontSize: 7,
+    textAlign: 'center',
+    fontFamily: 'TimesNewRoman',
+    color: '#ee018c',
+    padding: 2,
+    paddingTop: 4
+  },
+  todayIndicator: {
+    backgroundColor: '#ee018c',
+    color: 'white'
+  },
   left: {
     borderRightWidth: 0
   },
