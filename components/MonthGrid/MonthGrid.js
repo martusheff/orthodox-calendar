@@ -42,17 +42,21 @@ const MonthGrid = () => {
   const [isSwiping, setIsSwiping] = useState(false);
 
   const onSwipeLeft = () => {
-    if (isGridCollapsed) {
+    if (isGridCollapsed && !showSettings) {
+      
       const nextDay = selectedDayData.date.clone().add(1, 'day')
 
-      const dayData = getDayData(nextDay)
-      const newDayData = getNewDayData(nextDay)
-      setSelectedDayData(dayData)
-      setSelectedNewDayData(newDayData)
-      setCurrentDate(nextDay)
+      if((nextDay.year() == 2023 && nextDay.month == 11) || nextDay.year() == 2024) {
+        const dayData = getDayData(nextDay)
+        const newDayData = getNewDayData(nextDay)
+        setSelectedDayData(dayData)
+        setSelectedNewDayData(newDayData)
+        setCurrentDate(nextDay)
+      }
+
 
     } else {
-      console.log("swiped left!")
+      // console.log("swiped left!")
       const nextMonth = currentDate.clone().add(1, 'month');
       if (nextMonth.year() === 2024) {
         setCurrentDate(nextMonth);
@@ -62,14 +66,17 @@ const MonthGrid = () => {
   };
 
   const onSwipeRight = () => {
-    if (isGridCollapsed) {
+    if (isGridCollapsed  && !showSettings) {
       const prevDay = selectedDayData.date.clone().subtract(1, 'day')
 
-      const dayData = getDayData(prevDay)
-      const newDayData = getNewDayData(prevDay)
-      setSelectedDayData(dayData)
-      setSelectedNewDayData(newDayData)
-      setCurrentDate(prevDay)
+      if((prevDay.year() == 2023 && prevDay.month() == 11) || prevDay.year() == 2024) {
+        const dayData = getDayData(prevDay)
+        const newDayData = getNewDayData(prevDay)
+        setSelectedDayData(dayData)
+        setSelectedNewDayData(newDayData)
+        setCurrentDate(prevDay)
+      }
+
     } else {
       const prevMonth = currentDate.clone().subtract(1, 'month');
       if (prevMonth.year() === 2024 || (prevMonth.year() === 2023 && prevMonth.month() == 11)) {
@@ -111,7 +118,7 @@ const MonthGrid = () => {
           setCurrentDate(nextDay)
   
         } else {
-          console.log("swiped left!")
+          // console.log("swiped left!")
           const nextMonth = currentDate.clone().add(1, 'month');
           if (nextMonth.year() === 2024) {
             setCurrentDate(nextMonth);
@@ -172,7 +179,7 @@ const MonthGrid = () => {
 
   const grid = [];
   grid.push(
-    <Collapsible collapsed={isGridCollapsed}>
+    <Collapsible key={"header"} collapsed={isGridCollapsed}>
       <WeekdayHeader />
     </Collapsible>
   )
@@ -187,7 +194,7 @@ const MonthGrid = () => {
       const dayData = isWithinMonth ? getDayData(date) : new DayData();
       const newDayData = isWithinMonth ? getNewDayData(date) : null;
       const pos = getCellPosition(dayNumber, j, daysInMonth, i)
-
+      // console.log(j)
       row.push(
         <DayCell key={j} dayData={dayData} newDayData={newDayData} emptyCell={!isWithinMonth} toggleGridCollapse={toggleGridCollapse} handleDayCellTap={handleDayCellTap} pos={pos} />
       );

@@ -50,7 +50,7 @@ const DayView = ({ dayData, newDayData }) => {
   const saints = getSaintData(dayData.date)
   const holidays = getHolidayData(dayData.date)
   // console.log(saints)
-  console.log(holidays.length)
+  // console.log(holidays.length)
 
   return (
     <ScrollView style={styles.scrollView}>

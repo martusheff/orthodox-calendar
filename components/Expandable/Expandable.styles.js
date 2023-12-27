@@ -25,7 +25,6 @@ export default StyleSheet.create({
   },
   icon: {
     // styles for the icon
-    transition: 'transform 0.3s', // This line is for web; it's a no-op in React Native but included for reference
   },
   iconExpanded: {
     transform: [{ rotate: '90deg' }],  // Rotate icon when expanded

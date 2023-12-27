@@ -57,6 +57,7 @@ const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDay
   
     const saints = getSaintData(dayData.date)
 
+    const uniqueSaintNames = [...new Set(saints.map(saint => saint.name))];
 
   return (
     <View style={[styles.cell, styles[pos], newDayData.isHoliday || date.getDay() === 0 ? styles.holidayCell : {}]}>
@@ -71,8 +72,8 @@ const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDay
             </View>
             <View style={styles.topRightQuadrantBottom}>
               {
-                holidays.length > 0 && holidays.map((holiday) => (
-                  <Image source={getHolidayIcon(holiday.level)} style={styles.holidayIcon}/>
+                holidays.length > 0 && holidays.map((holiday, index) => (
+                  <Image key={`holiday-icon-${index}`} source={getHolidayIcon(holiday.level)} style={styles.holidayIcon}/>
                 ))
               }
              
@@ -85,15 +86,15 @@ const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDay
               { <Image source={getFastIcon(newDayData.fast_level)} style={[{ width: 20, height: 20, marginTop: 4 }]} />}
             </View>
             <View style={styles.holidayContainer}>
-              { holidays.length > 0 && holidays.map((holiday) => (
-                <Text style={styles.holiday}>{holiday.title}</Text>
+              { holidays.length > 0 && holidays.map((holiday, index) => (
+                <Text key={`holiday-title-${index}`} style={styles.holiday}>{holiday.title}</Text>
               ))}
               {/* {newDayData.isHoliday && <Text style={styles.holiday}>{newDayData.holiday_description}</Text>} */}
             </View>
             <View style={styles.saintsWrapper}>
               {
-                saints.map((saint, i) => (
-                  <Text style={styles.names} key={`${saint}${i}`} >{saint.name}</Text>
+                uniqueSaintNames.map((saint, index) => (
+                  <Text style={styles.names} key={`saint-title-${index}`} >{saint}</Text>
                 ))
               }
             </View>
