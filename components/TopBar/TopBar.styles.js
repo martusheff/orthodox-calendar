@@ -19,20 +19,16 @@ export default StyleSheet.create({
         color: '#ee018c',
         textAlign: 'center',
         fontFamily: 'Algerian',
+        textShadowColor: 'black',
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowRadius: 0,
 
         ...Platform.select({
-            ios: {
-              textShadowColor: 'black',
-              textShadowOffset: { width: 1, height: 1 },
-              textShadowRadius: 0,
-            },
             android: {
-              // Different or additional styling for Android
-              // Android doesn't support text shadows well; consider alternatives
-              elevation: 1, // or other styling that achieves a similar effect
+                textShadowRadius: 0.1,
             },
           }),
-
+      
     },
     titleContainer: {
         display: 'flex',

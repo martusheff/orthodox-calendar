@@ -1,10 +1,353 @@
 {
-    "1/7": {
-        "title": "Christmas",
-        "description": "Christmas is the joyous celebration of the birth of Jesus Christ, known as the Nativity, where the faithful rejoice in the Incarnation of God. It is a time when the divine love is manifested in the coming of the Messiah, who enters the world as both fully divine and fully human to redeem humanity. The period leading to this holy day is marked by prayer, fasting, and reflection, known as the Nativity Fast, allowing believers to spiritually prepare themselves for receiving the great mystery of faith."
-    },
-    "1/8": {
-        "title": "Synaxis of the Mother of God",
-        "description": "The Synaxis of the Mother of God is a significant Orthodox Christian holiday dedicated to venerating the Virgin Mary, emphasizing her pivotal role in giving birth to Jesus Christ. Orthodox believers attend special liturgical services, venerate icons of the Virgin Mary, and gather for communal meals, fostering a deep sense of devotion and community. This holiday underscores Mary's unique position as the Mother of God and offers a moment of reflection and celebration within the Orthodox Christian tradition."
-    }
+    "1/7": [
+        {
+            "title": "Christmas",
+            "description": "Christmas is the joyous celebration of the birth of Jesus Christ, known as the Nativity, where the faithful rejoice in the Incarnation of God. It is a time when the divine love is manifested in the coming of the Messiah, who enters the world as both fully divine and fully human to redeem humanity. The period leading to this holy day is marked by prayer, fasting, and reflection, known as the Nativity Fast, allowing believers to spiritually prepare themselves for receiving the great mystery of faith.",
+            "level": 1
+        }
+    ],
+    "1/8": [
+        {
+            "title": "Synaxis of the Mother of God",
+            "description": "The Synaxis of the Mother of God is a significant Orthodox Christian holiday dedicated to venerating the Virgin Mary, emphasizing her pivotal role in giving birth to Jesus Christ. Orthodox believers attend special liturgical services, venerate icons of the Virgin Mary, and gather for communal meals, fostering a deep sense of devotion and community. This holiday underscores Mary's unique position as the Mother of God and offers a moment of reflection and celebration within the Orthodox Christian tradition.",
+            "level": 2
+        }
+    ],
+    "1/14": [
+        {
+            "title": "Circumcision of our Lord",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        },
+        {
+            "title": "Sunday after Nativity",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "1/19": [
+        {
+            "title": "Holy Theophany of the Lord",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "1/20": [
+        {
+            "title": "Synaxis of Saint John the Baptist",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "2/12": [
+        {
+            "title": "Basic The Great & John Chrysostym",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "2/15": [
+        {
+            "title": "The Meeting of the Lord",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "4/7": [
+        {
+            "title": "The Annunciation of the Mother of God",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "4/28": [
+        {
+            "title": "Palm Sunday",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "5/5": [
+        {
+            "title": "The Bright Resurrection of Christ",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "5/6": [
+        {
+            "title": "Bright Monday",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "5/7": [
+        {
+            "title": "Bright Tuesday",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "5/8": [
+        {
+            "title": "Bright Wednesday",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "5/9": [
+        {
+            "title": "Bright Thursday",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "5/10": [
+        {
+            "title": "Bright Friday",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "5/11": [
+        {
+            "title": "Bright Saturday",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "5/21": [
+        {
+            "title": "Holy Apostle & Evangelist John the Theologian",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "5/22": [
+        {
+            "title": "Relics of Saint Nikolas the Wonderworker",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "5/29": [
+        {
+            "title": "Mid Pentecost",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "6/3": [
+        {
+            "title": "Vladimir Icon of the Mother of God",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        },
+        {
+            "title": "Prince Constantine & His Children",
+            "description": "Additional information is being gathered.",
+            "level": 3
+        }
+    ],
+    "6/13": [
+        {
+            "title": "The Ascnesion of the Lord",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "6/23": [
+        {
+            "title": "Pentecost Day of the Holy Trinity",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "6/24": [
+        {
+            "title": "Day of the Holy Spirit",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "7/6": [
+        {
+            "title": "Icon of the Mother of God Vladimir",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "7/7": [
+        {
+            "title": "Nativity of Saint John the Forerunner",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "7/12": [
+        {
+            "title": "Holy Chief Apostles Peter & Paul",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "7/21": [
+        {
+            "title": "Kazan Icon of the Mother of God",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "7/23": [
+        {
+            "title": "Deposition of the Robe of Christ in Moscow",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "7/28": [
+        {
+            "title": "Saint Vladimir the Great",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "8/2": [
+        {
+            "title": "Holy Prophet Elias",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "8/10": [
+        {
+            "title": "Smolensk Icon of the Mother of God",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "8/14": [
+        {
+            "title": "Procession of the Holy Cross of the Lord",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        },
+        {
+            "title": "The All-Merciful Savior",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "8/19": [
+        {
+            "title": "Transfiguration of the Lord",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "8/28": [
+        {
+            "title": "Dormition of the Mother of God",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "8/29": [
+        {
+            "title": "Icon of Christ not Made by Hands",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "9/8": [
+        {
+            "title": "Vladimir Icon of the Mother of God",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "9/11": [
+        {
+            "title": "Beheading of Saint John the Forerunner",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "9/21": [
+        {
+            "title": "Nativity of the Mother of God",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "9/27": [
+        {
+            "title": "Exaltation of the Holy Cross of the Lord",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "10/9": [
+        {
+            "title": "Repose of Saint John the Theologian",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "10/14": [
+        {
+            "title": "Protection of the Mother of God",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "11/4": [
+        {
+            "title": "Kazan Icon of the Mother of God",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "11/8": [
+        {
+            "title": "Holy Great Martyr Demetrius",
+            "description": "Additional information is being gathered.",
+            "level": 3
+        }
+    ],
+    "11/12": [
+        {
+            "title": "Saint Ambrose the Confessor",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "11/21": [
+        {
+            "title": "Synaxis of the Holy Archangel Michael",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "11/26": [
+        {
+            "title": "Saint John Chrysostym",
+            "description": "Additional information is being gathered.",
+            "level": 2
+        }
+    ],
+    "12/4": [
+        {
+            "title": "The Entry of the Mother of God into the Temple",
+            "description": "Additional information is being gathered.",
+            "level": 1
+        }
+    ],
+    "12/19": [
+        {
+            "title": "Saint Nikolas the Wonderworker",
+            "description": "The Feast of St. Nikolaos the Wonderworker is a sacred occasion to venerate a luminary of faith, whose life was a testament to the grace and mercy of our Lord. Esteemed for his numerous miracles and his profound charity, St. Nikolaos exemplifies the virtues of a devout servant of God, guiding us in our spiritual journey with his enduring legacy of benevolence.",
+            "level": 2
+        }
+    ]
 }

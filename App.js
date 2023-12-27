@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView } from 'react-native';
+// import { SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MonthGrid from './components/MonthGrid/MonthGrid';
@@ -9,6 +9,7 @@ import DayView from './components/DayView/DayView';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 const Stack = createSharedElementStackNavigator();
 
@@ -38,6 +39,7 @@ const App = () => {
   }
 
   return (
+    <SafeAreaProvider>
     <SafeAreaView style={{ flex: 1 }}>
       <NavigationContainer style={styles.container}>
         <Stack.Navigator initialRouteName="Home">
@@ -47,6 +49,7 @@ const App = () => {
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 

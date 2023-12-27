@@ -18,7 +18,7 @@ export default StyleSheet.create({
     // Add more title text styles as needed
   },
   descriptionText: {
-    paddingTop: 2,
+    paddingTop: 8,
     fontFamily: 'TimesNewRoman',
     fontSize: 15
     // Add more description text styles as needed
@@ -30,4 +30,7 @@ export default StyleSheet.create({
   iconExpanded: {
     transform: [{ rotate: '90deg' }],  // Rotate icon when expanded
   },
+  divider: {
+    paddingVertical: 4
+  }
 });

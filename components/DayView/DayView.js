@@ -1,6 +1,6 @@
 import styles from './DayView.styles';
 import React from 'react';
-import { View, Text, Image} from 'react-native';
+import { View, Text, Image, ScrollView} from 'react-native';
 import { Divider } from 'react-native-elements';
 import { getHolidayData, getSaintData } from '../../DayDataHelper';
 import Expandable from '../Expandable/Expandable';
@@ -48,10 +48,13 @@ const DayView = ({ dayData, newDayData }) => {
   }
 
   const saints = getSaintData(dayData.date)
-  const holiday = getHolidayData(dayData.date)
-  console.log(saints)
+  const holidays = getHolidayData(dayData.date)
+  // console.log(saints)
+  console.log(holidays.length)
 
   return (
+    <ScrollView style={styles.scrollView}>
+
     <View style={styles.container}>
 
       <View style={styles.fastCellContainer}>
@@ -71,6 +74,7 @@ const DayView = ({ dayData, newDayData }) => {
         </View>
       </View>
 
+        
       {
         saints.length > 0 &&
         <View style={styles.cell}>
@@ -78,7 +82,7 @@ const DayView = ({ dayData, newDayData }) => {
           <Divider style={styles.divider} width={2} color={'grey'}></Divider>
           {
             saints.map((saint) => (
-              <Expandable title={saint.title} description={saint.description}/>
+              <Expandable key={saint.title} title={saint.title} description={saint.description} showDivider={false}/>
             ))
           } 
 
@@ -92,11 +96,18 @@ const DayView = ({ dayData, newDayData }) => {
         <View style={styles.cell}>
           <Text style={styles.aboutTitle}>Holiday</Text>
           <Divider style={styles.divider} width={2} color={'grey'}></Divider>
-          <Expandable title={holiday.title} description={holiday.description}/>
+          {
+            holidays.map((holiday) => (
+              <Expandable key={holiday.title} title={holiday.title} description={holiday.description} showDivider={false}/>
+            ))
+          }
         </View>
       }
 
+
     </View>
+    </ScrollView>
+
   );
 };
 

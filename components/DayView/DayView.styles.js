@@ -114,7 +114,9 @@ export default StyleSheet.create({
         paddingHorizontal: 8,
         
     },
-
+    scrollView: {
+        flexGrow: 1
+    }
 
 
 });

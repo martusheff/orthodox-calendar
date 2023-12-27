@@ -6,7 +6,7 @@ export default StyleSheet.create({
     height: 100,
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 0.5
+    borderWidth: 0.75
   },
   emptyCell: {
     width: '14.28%',
@@ -29,8 +29,8 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRightWidth: 0.5,
-    borderBottomWidth: 0.5,
+    borderRightWidth: 0.75,
+    borderBottomWidth: 0.75,
     aspectRatio: 1 / 1,
   },
   topRightQuadrant: {
@@ -56,17 +56,22 @@ export default StyleSheet.create({
   },
   names: {
     fontSize: 6.5,
+    lineHeight: 6.25,
     textAlign: 'center',
     fontFamily: 'TimesNewRoman',
     paddingHorizontal: 2
   },
+  holidayContainer: {
+    paddingTop: 2
+  },
   holiday: {
-    fontSize: 7,
+    fontSize: 6.5,
+    lineHeight: 5.75,
     textAlign: 'center',
     fontFamily: 'TimesNewRoman',
     color: '#ee018c',
-    padding: 2,
-    paddingTop: 4
+    padding: 2
+
   },
   todayIndicator: {
     backgroundColor: '#ee018c',
@@ -87,7 +92,7 @@ export default StyleSheet.create({
   },
   centerLeftLeading: {
     borderRightWidth: 0,
-    borderTopWidth: 0.5
+    borderTopWidth: 0.75
   },
   centerMiddle: {
     borderRightWidth: 0,
@@ -104,10 +109,10 @@ export default StyleSheet.create({
   },
   centerMiddleLeading: {
     borderRightWidth: 0,
-    borderTopWidth: 0.5
+    borderTopWidth: 0.75
   },
   firstLast: {
-    borderRightWidth: 0.5
+    borderRightWidth: 0.75
   },
   firstFirst: {
     borderBottomWidth: 0,
@@ -129,7 +134,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    borderBottomWidth: 0.5
+    borderBottomWidth: 0.75
   },
   topRightQuadrantBottom: {
     display: 'flex',
@@ -146,6 +151,10 @@ export default StyleSheet.create({
     width: '100%',
     height: 20,
     backgroundColor: 'rgba(0,0,0,0.05)',
-    borderTopWidth: 0.5
+    borderTopWidth: 0.75
+  },
+  holidayIcon: {
+    width: 8,
+    height: 8
   }
 });

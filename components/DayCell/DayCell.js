@@ -4,7 +4,7 @@ import styles from "./DayCell.styles";
 import { useNavigation } from '@react-navigation/native';
 import { SharedElement } from 'react-navigation-shared-element';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { getSaintData } from '../../DayDataHelper';
+import { getHolidayData, getHolidayIcon, getSaintData } from '../../DayDataHelper';
 
 const EmptyDayCell = () => (
   <View style={styles.emptyCell}/>
@@ -47,6 +47,9 @@ const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDay
   let date = new Date(dayData.date)
   const today = new Date();
 
+  const holidays = getHolidayData(dayData.date)
+
+
   const isToday = today.getDate() === date.getDate() &&
     today.getMonth() === date.getMonth() &&
     today.getFullYear() === date.getFullYear();
@@ -67,8 +70,12 @@ const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDay
               <Text style={styles.topRightDate}>{newDayData.cc_day}</Text>
             </View>
             <View style={styles.topRightQuadrantBottom}>
-              {dayData.holidays.length > 0 && <Image source={require('../../assets/images/cross1.png')} style={{ width: 9, height: 9 }} />}
-              {dayData.holidays.length > 0 && <Image source={require('../../assets/images/cross3.png')} style={{ width: 9, height: 9 }} />}
+              {
+                holidays.length > 0 && holidays.map((holiday) => (
+                  <Image source={getHolidayIcon(holiday.level)} style={styles.holidayIcon}/>
+                ))
+              }
+             
             </View>
           </View>
         </View>
@@ -77,8 +84,11 @@ const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDay
             <View>
               { <Image source={getFastIcon(newDayData.fast_level)} style={[{ width: 20, height: 20, marginTop: 4 }]} />}
             </View>
-            <View>
-              {newDayData.isHoliday && <Text style={styles.holiday}>{newDayData.holiday_description}</Text>}
+            <View style={styles.holidayContainer}>
+              { holidays.length > 0 && holidays.map((holiday) => (
+                <Text style={styles.holiday}>{holiday.title}</Text>
+              ))}
+              {/* {newDayData.isHoliday && <Text style={styles.holiday}>{newDayData.holiday_description}</Text>} */}
             </View>
             <View style={styles.saintsWrapper}>
               {

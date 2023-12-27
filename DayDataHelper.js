@@ -4,6 +4,7 @@ import moment from 'moment';
 
 // Preload all month data at the top of your file
 const monthData = {
+    "12_2023": require('./assets/data/12_2023.json'),
     "1_2024": require('./assets/data/1_2024.json'),
     "2_2024": require('./assets/data/2_2024.json'),
     "3_2024": require('./assets/data/3_2024.json'),
@@ -19,6 +20,7 @@ const monthData = {
     // ... other months ...
 };
 
+
 export function getNewDayData(date) {
     const monthKey = `${date.month() + 1}_2024`;
     // console.log("ZAMBOO")
@@ -27,11 +29,24 @@ export function getNewDayData(date) {
     return localDayData[`${date.month() + 1}/${date.date()}/2024`]; // Adjust according to how your data is structured
 }
 
+export function getHolidayIcon(level) {
+    switch(level) {
+        case 1:
+            return require('./assets/images/cross1.png')
+        case 2:
+            return require('./assets/images/cross2.png')
+        case 3:
+            return require('./assets/images/cross3.png')
+        default:
+            return null
+    }
+}
+
 export function getSaintData(date) {
     const saintKey = `${date.month() + 1}/${date.date()}`
     let saintData = require('./assets/data/saints.json')
 
-    console.log(saintKey)
+    // console.log(saintKey)
     let saints = saintData[saintKey]
     return saints ? saints : []
 }
@@ -40,8 +55,21 @@ export function getHolidayData(date) {
     const holidayKey = `${date.month() + 1}/${date.date()}`
     let holidayData = require('./assets/data/holidays.json')
     let holiday = holidayData[holidayKey]
-    return holiday ? holiday : {}
+    return holiday ? holiday : []
 }
+
+const yearData = {
+    "2023": require('./assets/data/2023.json'),
+    "2024": require('./assets/data/2024.json')
+}
+
+export function getMonthData(date) {
+    let yearKey = `${date.year()}`
+    let year = yearData[yearKey]
+    let month = year[`${date.month() + 1}`]
+    return month ? month : {}
+}
+
 
 export function getDayData(date) {
     const events = [];  // Placeholder, fetch actual events here

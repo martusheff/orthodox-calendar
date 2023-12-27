@@ -9,7 +9,7 @@ import GestureRecognizer from 'react-native-swipe-gestures';
 import { Entypo } from '@expo/vector-icons';
 
 
-const TopBar = ({ toggleGridCollapse, title, isExpanded, setIsShowSettings }) => {
+const TopBar = ({ toggleGridCollapse, title, isExpanded, setIsShowSettings, year, ccYear }) => {
   const navigation = useNavigation()
 
   const handlePress = () => {
@@ -34,10 +34,10 @@ const TopBar = ({ toggleGridCollapse, title, isExpanded, setIsShowSettings }) =>
           <View style={styles.containerBorder}>
             <View style={styles.yearContainer}>
               <Text style={styles.year}>
-                {2024}
+                {year}
               </Text>
               <Text style={styles.year}>
-                {7533}
+                {ccYear}
               </Text>
 
             </View>

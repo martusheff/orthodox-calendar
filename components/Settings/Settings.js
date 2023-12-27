@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import styles from './Settings.styles';
 import { Divider } from 'react-native-elements';
+import Expandable from '../Expandable/Expandable';
 
 const Settings = () => {
 
@@ -9,10 +10,11 @@ const Settings = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.aboutTitle}>About the Calendar</Text>
-      <Divider style={styles.divider} width={2} color={'grey'}></Divider>
-      <Text style={styles.aboutBody}>{about}</Text>
+      <View style={styles.cell}>
+        <Expandable title={"About the Calendar"} description={about} showDivider={true} />
+      </View>
     </View>
+
   );
 };
 

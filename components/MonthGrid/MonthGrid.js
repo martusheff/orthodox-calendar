@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { View, SafeAreaView, TouchableOpacity } from 'react-native';
-import GestureRecognizer from 'react-native-swipe-gestures';
+import { View, SafeAreaView, TouchableOpacity, Platform} from 'react-native';
 import DayCell from '../DayCell/DayCell';
 import WeekdayHeader from '../WeekdayHeader/WeekdayHeader'
 import moment from 'moment';
@@ -15,6 +14,8 @@ import { PageIndicator } from 'react-native-page-indicator';
 import { MaterialIcons } from '@expo/vector-icons';
 import ReactNativeHapticFeedback from "react-native-haptic-feedback";
 import Settings from '../Settings/Settings';
+import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
+import { PanGestureHandler, State } from 'react-native-gesture-handler';
 
 
 export const DayCellPosition = {
@@ -38,25 +39,97 @@ const MonthGrid = () => {
   const [selectedDayData, setSelectedDayData] = useState(null);
   const [showSettings, setShowSettings] = useState(false);
   const [selectedNewDayData, setSelectedNewDayData] = useState(null);
-  // const onSwipeLeft = () => setCurrentDate(currentDate.clone().add(1, 'month'));
-  // const onSwipeRight = () => setCurrentDate(currentDate.clone().subtract(1, 'month'));
+  const [isSwiping, setIsSwiping] = useState(false);
 
   const onSwipeLeft = () => {
-    // Clone and add 1 month to the current date
-    const nextMonth = currentDate.clone().add(1, 'month');
-    // Check if the next month's year is 2024
-    if (nextMonth.year() === 2024) {
-      setCurrentDate(nextMonth); // Update the current date only if it's within 2024
+    if (isGridCollapsed) {
+      const nextDay = selectedDayData.date.clone().add(1, 'day')
+
+      const dayData = getDayData(nextDay)
+      const newDayData = getNewDayData(nextDay)
+      setSelectedDayData(dayData)
+      setSelectedNewDayData(newDayData)
+      setCurrentDate(nextDay)
+
+    } else {
+      console.log("swiped left!")
+      const nextMonth = currentDate.clone().add(1, 'month');
+      if (nextMonth.year() === 2024) {
+        setCurrentDate(nextMonth);
+      }
     }
+
   };
 
   const onSwipeRight = () => {
-    // Clone and subtract 1 month from the current date
-    const prevMonth = currentDate.clone().subtract(1, 'month');
-    // Check if the previous month's year is 2024
-    if (prevMonth.year() === 2024) {
-      setCurrentDate(prevMonth); // Update the current date only if it's within 2024
+    if (isGridCollapsed) {
+      const prevDay = selectedDayData.date.clone().subtract(1, 'day')
+
+      const dayData = getDayData(prevDay)
+      const newDayData = getNewDayData(prevDay)
+      setSelectedDayData(dayData)
+      setSelectedNewDayData(newDayData)
+      setCurrentDate(prevDay)
+    } else {
+      const prevMonth = currentDate.clone().subtract(1, 'month');
+      if (prevMonth.year() === 2024 || (prevMonth.year() === 2023 && prevMonth.month() == 11)) {
+        setCurrentDate(prevMonth);
+      }
     }
+
+  };
+
+
+  const onSwipeGestureEvent = (event) => {
+    if (event.nativeEvent.state === State.ACTIVE && !isSwiping) {
+      // Set the isSwiping state to true to indicate that a swipe is in progress
+      setIsSwiping(true);
+
+      // Handle your swipe -- left or right based on velocity or translation
+      if (event.nativeEvent.velocityX > 0) {
+        if (isGridCollapsed) {
+          const prevDay = selectedDayData.date.clone().subtract(1, 'day')
+  
+          const dayData = getDayData(prevDay)
+          const newDayData = getNewDayData(prevDay)
+          setSelectedDayData(dayData)
+          setSelectedNewDayData(newDayData)
+          setCurrentDate(prevDay)
+        } else {
+          const prevMonth = currentDate.clone().subtract(1, 'month');
+          if (prevMonth.year() === 2024 || (prevMonth.year() === 2023 && prevMonth.month() == 11)) {
+            setCurrentDate(prevMonth);
+          }
+        }      } else {
+        if (isGridCollapsed) {
+          const nextDay = selectedDayData.date.clone().add(1, 'day')
+  
+          const dayData = getDayData(nextDay)
+          const newDayData = getNewDayData(nextDay)
+          setSelectedDayData(dayData)
+          setSelectedNewDayData(newDayData)
+          setCurrentDate(nextDay)
+  
+        } else {
+          console.log("swiped left!")
+          const nextMonth = currentDate.clone().add(1, 'month');
+          if (nextMonth.year() === 2024) {
+            setCurrentDate(nextMonth);
+          }
+        }      }
+    }
+  };
+
+  const onSwipeHandlerStateChange = (event) => {
+    if (event.nativeEvent.state === State.END) {
+      // Once the swipe gesture has ended, reset the isSwiping state
+      setIsSwiping(false);
+    }
+  };
+
+  const config = {
+    velocityThreshold: 0.3,
+    directionalOffsetThreshold: 80, // Adjust this value to control sensitivity
   };
 
 
@@ -74,10 +147,8 @@ const MonthGrid = () => {
     setSelectedNewDayData(newDayData)
   };
 
+
   const getCellPosition = (i, j, dim, r) => {
-    // console.log("I: " + i)
-    // console.log("J: " + j)
-    // console.log("\n")
     if (i == 1) {
       if (j == 0) {
         return DayCellPosition.FIRST_FIRST;
@@ -128,20 +199,29 @@ const MonthGrid = () => {
     );
   }
 
-  // console.log(selectedDayData)
   return (
     <SafeAreaView style={styles.container}>
-      <TopBar title={isGridCollapsed ? showSettings ? "About" : selectedDayData.date.format("MMM DD") : currentDate.format('MMMM')} toggleGridCollapse={toggleGridCollapse} isExpanded={!isGridCollapsed} setIsShowSettings={setShowSettings} />
+      <TopBar title={isGridCollapsed ? showSettings ? "Settings" : selectedDayData.date.format("MMM DD") : currentDate.format('MMMM')} toggleGridCollapse={toggleGridCollapse} isExpanded={!isGridCollapsed} setIsShowSettings={setShowSettings} year={currentDate.year()} ccYear={7532} />
 
       <GestureRecognizer
         onSwipeLeft={onSwipeLeft}
         onSwipeRight={onSwipeRight}
+        config={config}
         style={{ flex: 1 }}
       >
+      {/* <PanGestureHandler
+       onGestureEvent={onSwipeGestureEvent}
+
+       onHandlerStateChange={onSwipeHandlerStateChange}
+       minDeltaX={50}  // Adjust sensitivity for horizontal swipes
+      > */}
+        <View style={{flex: 1}}>
         {grid}
 
         {isGridCollapsed ? showSettings ? <Settings></Settings> : <DayView dayData={selectedDayData} newDayData={selectedNewDayData}></DayView> : null}
-      </GestureRecognizer>
+        </View>
+        </GestureRecognizer>
+      {/* </PanGestureHandler> */}
       {
         !isGridCollapsed &&
         <View style={styles.pageRow}>

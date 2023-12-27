@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import styles from './Expandable.styles';
+import { Divider } from 'react-native-elements';
 
-const Expandable = ({ title, description }) => {
+const Expandable = ({ title, description, showDivider }) => {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -23,6 +24,10 @@ const Expandable = ({ title, description }) => {
           ]}
         />
       </TouchableOpacity>
+      {expanded && showDivider &&
+            <Divider style={styles.divider} width={2} color={'grey'}></Divider>
+      }
+
       {expanded && <Text style={styles.descriptionText}>{description}</Text>}
     </View>
   );
