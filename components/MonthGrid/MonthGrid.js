@@ -237,7 +237,7 @@ const MonthGrid = () => {
 
           </TouchableOpacity>
 
-          <PageIndicator variant='train' count={12} current={currentDate.month()} />
+          <PageIndicator activeColor={'#ee018c'} variant='train' gap={6} borderRadius={0} size={4} count={12} current={currentDate.month()} />
           <TouchableOpacity onPress={onSwipeLeft}>
             <MaterialIcons name="arrow-right" size={36} color="rgba(0,0,0,0.7)" />
           </TouchableOpacity>
