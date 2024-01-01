@@ -8,7 +8,7 @@ const Expandable = ({ title, description, showDivider }) => {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpand = () => {
-    setExpanded(!expanded);  // Toggle expanded state
+    setExpanded(!expanded);
   };
 
   return (
@@ -20,12 +20,12 @@ const Expandable = ({ title, description, showDivider }) => {
           size={24}
           style={[
             styles.icon,
-            expanded ? styles.iconExpanded : null,  // Apply conditional rotation
+            expanded ? styles.iconExpanded : null,
           ]}
         />
       </TouchableOpacity>
       {expanded && showDivider &&
-            <Divider style={styles.divider} width={2} color={'grey'}></Divider>
+        <Divider style={styles.divider} width={2} color={'grey'}></Divider>
       }
 
       {expanded && <Text style={styles.descriptionText}>{description}</Text>}

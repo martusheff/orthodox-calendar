@@ -115,7 +115,8 @@ export default StyleSheet.create({
         
     },
     scrollView: {
-        flexGrow: 1
+        // flexGrow: 1,
+        // showsVerticalScrollIndicator: false
     }
 
 

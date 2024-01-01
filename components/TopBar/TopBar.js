@@ -1,16 +1,11 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
 import styles from './TopBar.styles';
-import GestureRecognizer from 'react-native-swipe-gestures';
 import { Entypo } from '@expo/vector-icons';
 
 
 const TopBar = ({ toggleGridCollapse, title, isExpanded, setIsShowSettings, year, ccYear }) => {
-  const navigation = useNavigation()
 
   const handlePress = () => {
 

@@ -1,3 +1,15 @@
+export function isEaster(date) {
+    const year = date.year();
+    const easterDate = calculateEasterFromYear(year);
+    return date.isSame(easterDate, 'day');
+}
+
+export function getDistanceToPascha(date) {
+    const year = date.year();
+    const easterDate = calculateEasterFromYear(year);
+    return date.diff(easterDate, 'days');
+}
+
 export function calculateEasterFromYear(year) {
 
     let a = year % 19;
