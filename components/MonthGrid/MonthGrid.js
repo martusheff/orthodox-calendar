@@ -11,7 +11,7 @@ import DayView from '../DayView/DayView';
 import { PageIndicator } from 'react-native-page-indicator';
 import { MaterialIcons } from '@expo/vector-icons';
 import Settings from '../Settings/Settings';
-import { PanGestureHandler, State } from 'react-native-gesture-handler';
+import { PanGestureHandler, State, GestureHandlerRootView } from 'react-native-gesture-handler';
 import { getDayData, getNewDayData } from '../../utilities/OCDayHelper';
 import { getCellPosition } from '../../utilities/OCGridHelper';
 
@@ -157,12 +157,15 @@ const MonthGrid = () => {
   return (
     <SafeAreaView style={styles.container}>
       <TopBar title={isGridCollapsed ? showSettings ? "Settings" : selectedDayData.date.format("MMM DD") : currentDate.format('MMMM')} toggleGridCollapse={toggleGridCollapse} isExpanded={!isGridCollapsed} setIsShowSettings={setShowSettings} year={currentDate.year()} ccYear={7532} />
+      <GestureHandlerRootView style={{ flex: 1 }}>
+
       <PanGestureHandler onGestureEvent={onSwipeGestureEvent} onHandlerStateChange={onSwipeHandlerStateChange} minDeltaX={50}>
         <View style={{ flex: 1 }}>
           {grid}
           {isGridCollapsed ? showSettings ? <Settings></Settings> : <DayView dayData={selectedDayData} newDayData={selectedNewDayData}></DayView> : null}
         </View>
       </PanGestureHandler>
+      </GestureHandlerRootView>
       {
         !isGridCollapsed &&
         <View style={styles.pageRow}>
