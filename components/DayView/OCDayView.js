@@ -1,8 +1,8 @@
-import styles from './DayView.styles';
+import styles from './OCDayView.styles';
 import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import { Divider } from 'react-native-elements';
-import Expandable from '../Expandable/Expandable';
+import Expandable from '../Expandable/OCExpandable';
 import { getMockDailyReadingData } from '../../utilities/OCScriptureHelper';
 import { getHolidayData } from '../../utilities/OCHolidayHelper';
 import { getSaintData } from '../../utilities/OCSaintHelper';

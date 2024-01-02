@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import styles from './WeekdayHeader.styles';
+import styles from './OCWeekdayHeader.styles';
 
 const WeekdayHeader = () => {
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
