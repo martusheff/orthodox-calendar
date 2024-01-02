@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import styles from "./OCDayCell.styles";
+import styles from "./DayCell.styles";
 import { getHolidayData, getHolidayIcon } from '../../utilities/OCHolidayHelper';
 import { getSaintData } from '../../utilities/OCSaintHelper';
 import { getFastIcon } from '../../utilities/OCFastHelper';

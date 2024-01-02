@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import styles from './OCExpandable.styles';
+import styles from './Expandable.styles';
 import { Divider } from 'react-native-elements';
 
 const Expandable = ({ title, description, showDivider }) => {
