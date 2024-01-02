@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import styles from './TopBar.styles';
+import styles from './OCTopBar.styles';
 import { Entypo } from '@expo/vector-icons';
 
 

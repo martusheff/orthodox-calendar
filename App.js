@@ -3,7 +3,7 @@ import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-import MonthGrid from './components/MonthGrid/MonthGrid';
+import MonthGrid from './components/MonthGrid/OCMonthGrid';
 import styles from './App.styles';
 
 
