@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { View, SafeAreaView, TouchableOpacity } from 'react-native';
-import DayCell from '../DayCell/DayCell';
-import WeekdayHeader from '../WeekdayHeader/WeekdayHeader'
+import DayCell from '../DayCell/OCDayCell';
+import WeekdayHeader from '../WeekdayHeader/OCWeekdayHeader'
 import moment from 'moment';
-import TopBar from '../TopBar/TopBar';
-import styles from './MonthGrid.styles';
+import TopBar from '../TopBar/OCTopBar';
+import styles from './OCMonthGrid.styles';
 import DayData from '../../models/DayData';
 import Collapsible from 'react-native-collapsible';
-import DayView from '../DayView/DayView';
+import DayView from '../DayView/OCDayView';
 import { PageIndicator } from 'react-native-page-indicator';
 import { MaterialIcons } from '@expo/vector-icons';
-import Settings from '../Settings/Settings';
+import Settings from '../Settings/OCSettings';
 import { PanGestureHandler, State, GestureHandlerRootView } from 'react-native-gesture-handler';
 import { getDayData, getNewDayData } from '../../utilities/OCDayHelper';
 import { getCellPosition } from '../../utilities/OCGridHelper';
@@ -29,7 +29,7 @@ const MonthGrid = () => {
 
       const nextDay = selectedDayData.date.clone().add(1, 'day')
 
-      if ((nextDay.year() == 2023 && nextDay.month == 11) || nextDay.year() == 2024) {
+      if (nextDay.year() == 2024) {
         const dayData = getDayData(nextDay)
         const newDayData = getNewDayData(nextDay)
         setSelectedDayData(dayData)
@@ -49,7 +49,7 @@ const MonthGrid = () => {
     if (isGridCollapsed && !showSettings) {
       const prevDay = selectedDayData.date.clone().subtract(1, 'day')
 
-      if ((prevDay.year() == 2023 && prevDay.month() == 11) || prevDay.year() == 2024) {
+      if (prevDay.year() == 2024) {
         const dayData = getDayData(prevDay)
         const newDayData = getNewDayData(prevDay)
         setSelectedDayData(dayData)
@@ -59,48 +59,20 @@ const MonthGrid = () => {
 
     } else {
       const prevMonth = currentDate.clone().subtract(1, 'month');
-      if (prevMonth.year() === 2024 || (prevMonth.year() === 2023 && prevMonth.month() == 11)) {
+      if (prevMonth.year() === 2024) {
         setCurrentDate(prevMonth);
       }
     }
   };
-
 
   const onSwipeGestureEvent = (event) => {
     if (event.nativeEvent.state === State.ACTIVE && !isSwiping) {
       setIsSwiping(true);
 
       if (event.nativeEvent.velocityX > 0) {
-        if (isGridCollapsed) {
-          const prevDay = selectedDayData.date.clone().subtract(1, 'day')
-
-          const dayData = getDayData(prevDay)
-          const newDayData = getNewDayData(prevDay)
-          setSelectedDayData(dayData)
-          setSelectedNewDayData(newDayData)
-          setCurrentDate(prevDay)
-        } else {
-          const prevMonth = currentDate.clone().subtract(1, 'month');
-          if (prevMonth.year() === 2024 || (prevMonth.year() === 2023 && prevMonth.month() == 11)) {
-            setCurrentDate(prevMonth);
-          }
-        }
+        onSwipeRight()
       } else {
-        if (isGridCollapsed) {
-          const nextDay = selectedDayData.date.clone().add(1, 'day')
-
-          const dayData = getDayData(nextDay)
-          const newDayData = getNewDayData(nextDay)
-          setSelectedDayData(dayData)
-          setSelectedNewDayData(newDayData)
-          setCurrentDate(nextDay)
-
-        } else {
-          const nextMonth = currentDate.clone().add(1, 'month');
-          if (nextMonth.year() === 2024) {
-            setCurrentDate(nextMonth);
-          }
-        }
+        onSwipeLeft()
       }
     }
   };
@@ -158,13 +130,12 @@ const MonthGrid = () => {
     <SafeAreaView style={styles.container}>
       <TopBar title={isGridCollapsed ? showSettings ? "Settings" : selectedDayData.date.format("MMM DD") : currentDate.format('MMMM')} toggleGridCollapse={toggleGridCollapse} isExpanded={!isGridCollapsed} setIsShowSettings={setShowSettings} year={currentDate.year()} ccYear={7532} />
       <GestureHandlerRootView style={{ flex: 1 }}>
-
-      <PanGestureHandler onGestureEvent={onSwipeGestureEvent} onHandlerStateChange={onSwipeHandlerStateChange} minDeltaX={50}>
-        <View style={{ flex: 1 }}>
-          {grid}
-          {isGridCollapsed ? showSettings ? <Settings></Settings> : <DayView dayData={selectedDayData} newDayData={selectedNewDayData}></DayView> : null}
-        </View>
-      </PanGestureHandler>
+        <PanGestureHandler onGestureEvent={onSwipeGestureEvent} onHandlerStateChange={onSwipeHandlerStateChange} minDeltaX={50}>
+          <View style={{ flex: 1 }}>
+            {grid}
+            {isGridCollapsed ? showSettings ? <Settings></Settings> : <DayView dayData={selectedDayData} newDayData={selectedNewDayData}></DayView> : null}
+          </View>
+        </PanGestureHandler>
       </GestureHandlerRootView>
       {
         !isGridCollapsed &&

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import styles from './Settings.styles';
-import Expandable from '../Expandable/Expandable';
+import styles from './OCSettings.styles';
+import Expandable from '../Expandable/OCExpandable';
 
 const Settings = () => {
 
