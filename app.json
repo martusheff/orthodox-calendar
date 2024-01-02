@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Calendar",
+    "name": "Old Believer Calendar",
     "slug": "orthodox-calendar",
     "version": "1.0",
     "orientation": "portrait",
@@ -15,7 +15,7 @@
       "**/*"
     ],
     "ios": {
-      "buildNumber": "7",
+      "buildNumber": "5",
       "supportsTablet": true,
       "bundleIdentifier": "com.andronick.orthodoxcalendar"
     },
