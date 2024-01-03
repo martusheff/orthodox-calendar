@@ -11,15 +11,14 @@ import { PageIndicator } from 'react-native-page-indicator';
 import { MaterialIcons } from '@expo/vector-icons';
 import Settings from '../Settings/OCSettings';
 import { PanGestureHandler, State, GestureHandlerRootView } from 'react-native-gesture-handler';
-import { getNewDayData } from '../../utilities/OCDayHelper';
+import { getDayData } from '../../utilities/OCDayHelper';
 import { getCellPosition } from '../../utilities/OCGridHelper';
-
 
 const MonthGrid = () => {
   const [currentDate, setCurrentDate] = useState(moment());
   const [isGridCollapsed, setIsGridCollapsed] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [selectedNewDayData, setSelectedNewDayData] = useState(null);
+  const [selectedDayData, setSelectedDayData] = useState(null);
   const [isSwiping, setIsSwiping] = useState(false);
 
   const onSwipeLeft = () => {
@@ -28,8 +27,8 @@ const MonthGrid = () => {
       const nextDay = currentDate.clone().add(1, 'day')
 
       if (nextDay.year() == 2024) {
-        const newDayData = getNewDayData(nextDay)
-        setSelectedNewDayData(newDayData)
+        const dayData = getDayData(nextDay)
+        setSelectedDayData(dayData)
         setCurrentDate(nextDay)
       }
 
@@ -46,8 +45,8 @@ const MonthGrid = () => {
       const prevDay = currentDate.clone().subtract(1, 'day')
 
       if (prevDay.year() == 2024) {
-        const newDayData = getNewDayData(prevDay)
-        setSelectedNewDayData(newDayData)
+        const dayData = getDayData(prevDay)
+        setSelectedDayData(dayData)
         setCurrentDate(prevDay)
       }
 
@@ -86,9 +85,9 @@ const MonthGrid = () => {
     setIsGridCollapsed(!isGridCollapsed);
   };
 
-  const handleDayCellTap = (date, newDayData) => {
+  const handleDayCellTap = (date, dayData) => {
     setCurrentDate(date)
-    setSelectedNewDayData(newDayData)
+    setSelectedDayData(dayData)
   };
 
   const grid = [];
@@ -105,11 +104,11 @@ const MonthGrid = () => {
       const dayNumber = j - startWeekDay + 1;
       const isWithinMonth = dayNumber > 0 && dayNumber <= daysInMonth.length;
       const date = isWithinMonth ? currentDate.clone().date(dayNumber) : null;
-      const newDayData = isWithinMonth ? getNewDayData(date) : null;
+      const dayData = isWithinMonth ? getDayData(date) : null;
       const pos = getCellPosition(dayNumber, j, daysInMonth, i)
 
       row.push(
-        <DayCell key={j} dateB={date} newDayData={newDayData} emptyCell={!isWithinMonth} toggleGridCollapse={toggleGridCollapse} handleDayCellTap={handleDayCellTap} pos={pos} />
+        <DayCell key={j} dateString={date} dayData={dayData} emptyCell={!isWithinMonth} toggleGridCollapse={toggleGridCollapse} handleDayCellTap={handleDayCellTap} pos={pos} />
       );
     }
     grid.push(
@@ -126,7 +125,7 @@ const MonthGrid = () => {
         <PanGestureHandler onGestureEvent={onSwipeGestureEvent} onHandlerStateChange={onSwipeHandlerStateChange} minDeltaX={50}>
           <View style={{ flex: 1 }}>
             {grid}
-            {isGridCollapsed ? showSettings ? <Settings></Settings> : <DayView date={currentDate} newDayData={selectedNewDayData}></DayView> : null}
+            {isGridCollapsed ? showSettings ? <Settings/> : <DayView date={currentDate} dayData={selectedDayData}></DayView> : null}
           </View>
         </PanGestureHandler>
       </GestureHandlerRootView>
