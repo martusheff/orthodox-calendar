@@ -5,14 +5,13 @@ import WeekdayHeader from '../WeekdayHeader/OCWeekdayHeader'
 import moment from 'moment';
 import TopBar from '../TopBar/OCTopBar';
 import styles from './OCMonthGrid.styles';
-import DayData from '../../models/DayData';
 import Collapsible from 'react-native-collapsible';
 import DayView from '../DayView/OCDayView';
 import { PageIndicator } from 'react-native-page-indicator';
 import { MaterialIcons } from '@expo/vector-icons';
 import Settings from '../Settings/OCSettings';
 import { PanGestureHandler, State, GestureHandlerRootView } from 'react-native-gesture-handler';
-import { getDayData, getNewDayData } from '../../utilities/OCDayHelper';
+import { getNewDayData } from '../../utilities/OCDayHelper';
 import { getCellPosition } from '../../utilities/OCGridHelper';
 
 
@@ -87,7 +86,8 @@ const MonthGrid = () => {
     setIsGridCollapsed(!isGridCollapsed);
   };
 
-  const handleDayCellTap = (dayData, newDayData) => {
+  const handleDayCellTap = (date, newDayData) => {
+    setCurrentDate(date)
     setSelectedNewDayData(newDayData)
   };
 
@@ -105,12 +105,11 @@ const MonthGrid = () => {
       const dayNumber = j - startWeekDay + 1;
       const isWithinMonth = dayNumber > 0 && dayNumber <= daysInMonth.length;
       const date = isWithinMonth ? currentDate.clone().date(dayNumber) : null;
-      const dayData = isWithinMonth ? getDayData(date) : new DayData();
       const newDayData = isWithinMonth ? getNewDayData(date) : null;
       const pos = getCellPosition(dayNumber, j, daysInMonth, i)
 
       row.push(
-        <DayCell key={j} dayData={dayData} newDayData={newDayData} emptyCell={!isWithinMonth} toggleGridCollapse={toggleGridCollapse} handleDayCellTap={handleDayCellTap} pos={pos} />
+        <DayCell key={j} dateB={date} newDayData={newDayData} emptyCell={!isWithinMonth} toggleGridCollapse={toggleGridCollapse} handleDayCellTap={handleDayCellTap} pos={pos} />
       );
     }
     grid.push(

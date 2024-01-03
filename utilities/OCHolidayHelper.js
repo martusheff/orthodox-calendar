@@ -14,35 +14,11 @@ export function getHolidayIcon(level) {
 }
 
 export function getHolidayData(date) {
-    const holidayKey = `1/1`
-
-    // const holidayKey = `${date.month() + 1}/${date.date()}`
+    const holidayKey = `${date.month() + 1}/${date.date()}`
     let holidayData = require('./../assets/data/holidays.json')
     let holiday = holidayData[holidayKey]
     return holiday ? holiday : []
 }
-
-export function getStaticHolidaysByDayMonth(day, month) {
-    const daysFileURL = `./../assets/days/days.json`;
-    const localDayData = require(daysFileURL);
-  
-    const matchingDay = localDayData.find(
-      (dayData) => dayData.day === day && dayData.month === month
-    );
-  
-    if (matchingDay) {
-      const holidaysFileURL = `./../assets/holidays/holidays.json`;
-      const localHolidaysData = require(holidaysFileURL);
-  
-      const holidayObjects = matchingDay.holidays.map((holidayId) =>
-      localHolidaysData.find((holiday) => holiday.id === holidayId)
-      );
-      return holidayObjects;
-    }
-  
-    return [];
-  }
-
 
 export function getHoliday(date) {
     const distanceToPascha = getDistanceToPascha(date);

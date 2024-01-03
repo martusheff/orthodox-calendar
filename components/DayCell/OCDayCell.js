@@ -9,24 +9,24 @@ const EmptyDayCell = () => (
   <View style={styles.emptyCell} />
 );
 
-const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDayCellTap, pos }) => {
+const DayCell = ({ dateB, newDayData, emptyCell, toggleGridCollapse, handleDayCellTap, pos }) => {
   if (emptyCell) {
     return <EmptyDayCell />;
   }
-
   const handlePress = () => {
     toggleGridCollapse();
-    handleDayCellTap(dayData, newDayData);
+    handleDayCellTap(dateB, newDayData);
   };
 
-  let date = new Date(dayData.date)
+  let date = new Date(dateB)
+  
   const today = new Date();
-  const holidays = getHolidayData(dayData.date)
+  const holidays = getHolidayData(dateB)
   const isToday = today.getDate() === date.getDate() &&
     today.getMonth() === date.getMonth() &&
     today.getFullYear() === date.getFullYear();
 
-  const saints = getSaintData(dayData.date)
+  const saints = getSaintData(dateB)
   const uniqueSaintNames = [...new Set(saints.map(saint => saint.name))];
 
   return (
@@ -34,7 +34,7 @@ const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDay
       <TouchableOpacity onPress={handlePress}>
         <View style={styles.topContainer}>
           <View style={[styles.topLeftQuadrant, isToday ? styles.todayIndicator : {}]}>
-            <Text style={[styles.topLeftDate, isToday ? styles.todayIndicator : {}]}>{dayData.date.date()}</Text>
+            <Text style={[styles.topLeftDate, isToday ? styles.todayIndicator : {}]}>{dateB.date()}</Text>
           </View>
           <View style={[styles.topRightQuadrant]}>
             <View style={styles.topRightQuadrantTop}>
