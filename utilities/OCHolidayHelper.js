@@ -14,7 +14,9 @@ export function getHolidayIcon(level) {
 }
 
 export function getHolidayData(date) {
-    const holidayKey = `${date.month() + 1}/${date.date()}`
+    const holidayKey = `1/1`
+
+    // const holidayKey = `${date.month() + 1}/${date.date()}`
     let holidayData = require('./../assets/data/holidays.json')
     let holiday = holidayData[holidayKey]
     return holiday ? holiday : []
