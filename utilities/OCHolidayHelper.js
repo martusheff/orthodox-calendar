@@ -20,28 +20,6 @@ export function getHolidayData(date) {
     return holiday ? holiday : []
 }
 
-export function getStaticHolidaysByDayMonth(day, month) {
-    const daysFileURL = `./../assets/days/days.json`;
-    const localDayData = require(daysFileURL);
-  
-    const matchingDay = localDayData.find(
-      (dayData) => dayData.day === day && dayData.month === month
-    );
-  
-    if (matchingDay) {
-      const holidaysFileURL = `./../assets/holidays/holidays.json`;
-      const localHolidaysData = require(holidaysFileURL);
-  
-      const holidayObjects = matchingDay.holidays.map((holidayId) =>
-      localHolidaysData.find((holiday) => holiday.id === holidayId)
-      );
-      return holidayObjects;
-    }
-  
-    return [];
-  }
-
-
 export function getHoliday(date) {
     const distanceToPascha = getDistanceToPascha(date);
     

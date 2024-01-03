@@ -18,7 +18,8 @@ const fetchFonts = () => {
 const App = () => {
   const [fontLoaded, setFontLoaded] = useState(false);
 
-  useEffect(() => {
+  useEffect( () => {
+
     async function loadResourcesAndDataAsync() {
       try {
         await SplashScreen.preventAutoHideAsync();
@@ -32,7 +33,6 @@ const App = () => {
         await SplashScreen.hideAsync();
       }
     }
-
     loadResourcesAndDataAsync();
   }, []);
 

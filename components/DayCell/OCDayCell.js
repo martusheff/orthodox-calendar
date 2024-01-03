@@ -9,36 +9,36 @@ const EmptyDayCell = () => (
   <View style={styles.emptyCell} />
 );
 
-const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDayCellTap, pos }) => {
+const DayCell = ({ dateString, dayData, emptyCell, toggleGridCollapse, handleDayCellTap, pos }) => {
   if (emptyCell) {
     return <EmptyDayCell />;
   }
-
   const handlePress = () => {
     toggleGridCollapse();
-    handleDayCellTap(dayData, newDayData);
+    handleDayCellTap(dateString, dayData);
   };
 
-  let date = new Date(dayData.date)
+  let date = new Date(dateString)
+  
   const today = new Date();
-  const holidays = getHolidayData(dayData.date)
+  const holidays = getHolidayData(dateString)
   const isToday = today.getDate() === date.getDate() &&
     today.getMonth() === date.getMonth() &&
     today.getFullYear() === date.getFullYear();
 
-  const saints = getSaintData(dayData.date)
+  const saints = getSaintData(dateString)
   const uniqueSaintNames = [...new Set(saints.map(saint => saint.name))];
 
   return (
-    <View style={[styles.cell, styles[pos], newDayData.isHoliday || date.getDay() === 0 ? styles.holidayCell : {}]}>
+    <View style={[styles.cell, styles[pos], dayData.isHoliday || date.getDay() === 0 ? styles.holidayCell : {}]}>
       <TouchableOpacity onPress={handlePress}>
         <View style={styles.topContainer}>
           <View style={[styles.topLeftQuadrant, isToday ? styles.todayIndicator : {}]}>
-            <Text style={[styles.topLeftDate, isToday ? styles.todayIndicator : {}]}>{dayData.date.date()}</Text>
+            <Text style={[styles.topLeftDate, isToday ? styles.todayIndicator : {}]}>{dateString.date()}</Text>
           </View>
           <View style={[styles.topRightQuadrant]}>
             <View style={styles.topRightQuadrantTop}>
-              <Text style={styles.topRightDate}>{newDayData.cc_day}</Text>
+              <Text style={styles.topRightDate}>{dayData.cc_day}</Text>
             </View>
             <View style={styles.topRightQuadrantBottom}>
               {
@@ -52,7 +52,7 @@ const DayCell = ({ dayData, newDayData, emptyCell, toggleGridCollapse, handleDay
         <View style={styles.bottomContainer}>
           <View style={styles.iconWrapper}>
             <View>
-              {<Image source={getFastIcon(newDayData.fast_level)} style={[{ width: 20, height: 20, marginTop: 4 }]} />}
+              {<Image source={getFastIcon(dayData.fast_level)} style={[{ width: 20, height: 20, marginTop: 4 }]} />}
             </View>
             <View style={styles.holidayContainer}>
               {holidays.length > 0 && holidays.map((holiday, index) => (

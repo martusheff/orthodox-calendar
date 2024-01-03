@@ -8,10 +8,11 @@ import { getHolidayData } from '../../utilities/OCHolidayHelper';
 import { getSaintData } from '../../utilities/OCSaintHelper';
 import { getFastIcon, getFastTitle } from '../../utilities/OCFastHelper';
 
-const DayView = ({ dayData, newDayData }) => {
+const DayView = ({ date, dayData }) => {
 
-  const saints = getSaintData(dayData.date)
-  const holidays = getHolidayData(dayData.date)
+  const saints = getSaintData(date)
+  const holidays = getHolidayData(date)
+  const fastTitle = getFastTitle(date)
   const dailyReading = getMockDailyReadingData()
 
   return (
@@ -19,14 +20,14 @@ const DayView = ({ dayData, newDayData }) => {
       <View style={styles.container}>
         <View style={styles.fastCellContainer}>
           <View style={styles.fastIconCell}>
-            <Image style={{ width: 62, height: 62 }} source={getFastIcon(newDayData.fast_level)}></Image>
+            <Image style={{ width: 62, height: 62 }} source={getFastIcon(dayData.fast_level)}></Image>
           </View>
           <View style={styles.fastTitleCell}>
             <View style={styles.fastTitleCellTop}>
-              <Text style={styles.fastLabel}>{dayData.date.format("dddd")}</Text>
+              <Text style={styles.fastLabel}>{ date.format("dddd")}</Text>
             </View>
             <View style={styles.fastTitleCellBottom}>
-              <Text style={styles.fastLabel}>{`${dayData.fastTitle ? `${dayData.fastTitle}, ` : ""}${getFastTitle(newDayData.fast_level)}`}</Text>
+              <Text style={styles.fastLabel}>{`${fastTitle && fastTitle + ", "}${getFastTitle(dayData.fast_level)}`}</Text>
             </View>
           </View>
         </View>
@@ -45,7 +46,7 @@ const DayView = ({ dayData, newDayData }) => {
 
 
         {
-          newDayData.isHoliday &&
+          dayData.isHoliday &&
           <View style={styles.cell}>
             <Text style={styles.aboutTitle}>Holiday</Text>
             <Divider style={styles.divider} width={2} color={'grey'}></Divider>
