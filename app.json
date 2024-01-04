@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Calendar",
+    "name": "Old Believer Calendar",
     "slug": "orthodox-calendar",
     "version": "1.0",
     "orientation": "portrait",
@@ -15,12 +15,15 @@
       "**/*"
     ],
     "ios": {
-      "buildNumber": "13",
+      "buildNumber": "19",
       "supportsTablet": true,
-      "bundleIdentifier": "com.andronick.orthodoxcalendar"
+      "bundleIdentifier": "com.andronick.orthodoxcalendar",
+      "infoPlist": {
+        "CFBundleDisplayName": "Old Believer Cal"
+      }
     },
     "android": {
-      "versionCode": 3, 
+      "versionCode": 3,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"

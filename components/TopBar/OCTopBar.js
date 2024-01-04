@@ -8,8 +8,8 @@ import { OCMediumImpact } from '../../utilities/OCHapticHelper';
 
 const OCTopBar = ({ toggleGridCollapse, title, isExpanded, setIsShowSettings, year, ccYear }) => {
 
-  const handlePress = async () => {
-    await OCMediumImpact()
+  const handlePress = () => {
+    OCMediumImpact()
     if (isExpanded) {
       setIsShowSettings(isExpanded)
     } else {

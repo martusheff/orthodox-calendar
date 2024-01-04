@@ -14,8 +14,8 @@ const OCDayCell = ({ dateString, dayData, emptyCell, toggleGridCollapse, handleD
   if (emptyCell) {
     return <OCEmptyDayCell />;
   }
-  const handlePress = async () => {
-    await OCMediumImpact()
+  const handlePress = () => {
+    OCMediumImpact()
     toggleGridCollapse();
     handleDayCellTap(dateString, dayData);
   };

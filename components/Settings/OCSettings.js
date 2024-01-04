@@ -31,7 +31,7 @@ const OCSettings = () => {
         <OCExpandable title={"About the Calendar"} description={about} showDivider={true} />
       </View>
       <View style={styles.switchCell}>
-        <Text style={styles.switchTitle}>Haptic Feedback</Text>
+        <Text style={styles.switchTitle}>Tap Vibrations</Text>
         <Switch
           value={isHapticEnabled}
           onValueChange={handleHapticChange}
