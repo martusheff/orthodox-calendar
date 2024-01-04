@@ -3,11 +3,13 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import styles from './OCExpandable.styles';
 import { Divider } from 'react-native-elements';
+import { OCMediumImpact } from '../../utilities/OCHapticHelper';
 
-const Expandable = ({ title, description, showDivider }) => {
+const OCExpandable = ({ title, description, showDivider }) => {
   const [expanded, setExpanded] = useState(false);
 
-  const toggleExpand = () => {
+  const toggleExpand = async () => {
+    await OCMediumImpact()
     setExpanded(!expanded);
   };
 
@@ -33,4 +35,4 @@ const Expandable = ({ title, description, showDivider }) => {
   );
 };
 
-export default Expandable;
+export default OCExpandable;

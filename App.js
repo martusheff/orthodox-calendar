@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-
-import MonthGrid from './components/MonthGrid/OCMonthGrid';
 import styles from './App.styles';
+import OCMonthGrid from './components/MonthGrid/OCMonthGrid';
 
 
 const fetchFonts = () => {
@@ -43,7 +42,7 @@ const App = () => {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={[{ flex: 1 }, styles.container]}>
-       <MonthGrid/>
+       <OCMonthGrid/>
       </SafeAreaView>
     </SafeAreaProvider>
   );

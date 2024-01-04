@@ -3,12 +3,13 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import styles from './OCTopBar.styles';
 import { Entypo } from '@expo/vector-icons';
+import { OCMediumImpact } from '../../utilities/OCHapticHelper';
 
 
-const TopBar = ({ toggleGridCollapse, title, isExpanded, setIsShowSettings, year, ccYear }) => {
+const OCTopBar = ({ toggleGridCollapse, title, isExpanded, setIsShowSettings, year, ccYear }) => {
 
-  const handlePress = () => {
-
+  const handlePress = async () => {
+    await OCMediumImpact()
     if (isExpanded) {
       setIsShowSettings(isExpanded)
     } else {
@@ -71,4 +72,4 @@ const TopBar = ({ toggleGridCollapse, title, isExpanded, setIsShowSettings, year
   );
 };
 
-export default TopBar;
+export default OCTopBar;
