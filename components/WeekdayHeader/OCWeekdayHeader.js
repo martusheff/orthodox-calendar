@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import styles from './OCWeekdayHeader.styles';
 
-const WeekdayHeader = () => {
+const OCWeekdayHeader = () => {
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   return (
@@ -22,5 +22,5 @@ const WeekdayHeader = () => {
   );
 }
 
-export default WeekdayHeader;
+export default OCWeekdayHeader;
 

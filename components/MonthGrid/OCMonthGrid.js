@@ -1,27 +1,33 @@
 import React, { useState } from 'react';
 import { View, SafeAreaView, TouchableOpacity } from 'react-native';
-import DayCell from '../DayCell/OCDayCell';
-import WeekdayHeader from '../WeekdayHeader/OCWeekdayHeader'
+import OCDayCell from '../DayCell/OCDayCell';
+import OCWeekdayHeader from '../WeekdayHeader/OCWeekdayHeader'
 import moment from 'moment';
-import TopBar from '../TopBar/OCTopBar';
+import OCTopBar from '../TopBar/OCTopBar';
 import styles from './OCMonthGrid.styles';
 import Collapsible from 'react-native-collapsible';
-import DayView from '../DayView/OCDayView';
+import OCDayView from '../DayView/OCDayView';
 import { PageIndicator } from 'react-native-page-indicator';
 import { MaterialIcons } from '@expo/vector-icons';
-import Settings from '../Settings/OCSettings';
+import OCSettings from '../Settings/OCSettings';
 import { PanGestureHandler, State, GestureHandlerRootView } from 'react-native-gesture-handler';
 import { getDayData } from '../../utilities/OCDayHelper';
 import { getCellPosition } from '../../utilities/OCGridHelper';
+import { OCMediumImpact } from '../../utilities/OCHapticHelper';
 
-const MonthGrid = () => {
+const OCMonthGrid = () => {
   const [currentDate, setCurrentDate] = useState(moment());
   const [isGridCollapsed, setIsGridCollapsed] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [selectedDayData, setSelectedDayData] = useState(null);
   const [isSwiping, setIsSwiping] = useState(false);
 
-  const onSwipeLeft = () => {
+  const onSwipeLeft = (tapped) => {
+
+    if(tapped == true) {
+      OCMediumImpact()
+    }
+
     if (isGridCollapsed && !showSettings) {
 
       const nextDay = currentDate.clone().add(1, 'day')
@@ -40,7 +46,12 @@ const MonthGrid = () => {
     }
   };
 
-  const onSwipeRight = () => {
+  const onSwipeRight = (tapped) => {
+
+    if(tapped == true) {
+      OCMediumImpact()
+    }
+
     if (isGridCollapsed && !showSettings) {
       const prevDay = currentDate.clone().subtract(1, 'day')
 
@@ -93,7 +104,7 @@ const MonthGrid = () => {
   const grid = [];
   grid.push(
     <Collapsible key={"header"} collapsed={isGridCollapsed}>
-      <WeekdayHeader />
+      <OCWeekdayHeader />
     </Collapsible>
   )
   for (let i = 0; i < totalSlots; i += 7) {
@@ -108,7 +119,7 @@ const MonthGrid = () => {
       const pos = getCellPosition(dayNumber, j, daysInMonth, i)
 
       row.push(
-        <DayCell key={j} dateString={date} dayData={dayData} emptyCell={!isWithinMonth} toggleGridCollapse={toggleGridCollapse} handleDayCellTap={handleDayCellTap} pos={pos} />
+        <OCDayCell key={j} dateString={date} dayData={dayData} emptyCell={!isWithinMonth} toggleGridCollapse={toggleGridCollapse} handleDayCellTap={handleDayCellTap} pos={pos} />
       );
     }
     grid.push(
@@ -120,12 +131,12 @@ const MonthGrid = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TopBar title={isGridCollapsed ? showSettings ? "Settings" : currentDate.format("MMM DD") : currentDate.format('MMMM')} toggleGridCollapse={toggleGridCollapse} isExpanded={!isGridCollapsed} setIsShowSettings={setShowSettings} year={currentDate.year()} ccYear={7532} />
+      <OCTopBar title={isGridCollapsed ? showSettings ? "Settings" : currentDate.format("MMM DD") : currentDate.format('MMMM')} toggleGridCollapse={toggleGridCollapse} isExpanded={!isGridCollapsed} setIsShowSettings={setShowSettings} year={currentDate.year()} ccYear={7532} />
       <GestureHandlerRootView style={{ flex: 1 }}>
         <PanGestureHandler onGestureEvent={onSwipeGestureEvent} onHandlerStateChange={onSwipeHandlerStateChange} minDeltaX={50}>
           <View style={{ flex: 1 }}>
             {grid}
-            {isGridCollapsed ? showSettings ? <Settings/> : <DayView date={currentDate} dayData={selectedDayData}></DayView> : null}
+            {isGridCollapsed ? showSettings ? <OCSettings/> : <OCDayView date={currentDate} dayData={selectedDayData}></OCDayView> : null}
           </View>
         </PanGestureHandler>
       </GestureHandlerRootView>
@@ -133,13 +144,13 @@ const MonthGrid = () => {
       {
         !isGridCollapsed &&
         <View style={styles.pageRow}>
-          <TouchableOpacity onPress={onSwipeRight}>
+          <TouchableOpacity onPress={() => onSwipeRight(true)}>
             <MaterialIcons name="arrow-left" size={36} color="rgba(0,0,0,0.7)" />
 
           </TouchableOpacity>
 
           <PageIndicator activeColor={'#ee018c'} variant='train' gap={6} borderRadius={0} size={4} count={12} current={currentDate.month()} />
-          <TouchableOpacity onPress={onSwipeLeft}>
+          <TouchableOpacity onPress={() => onSwipeLeft(true)}>
             <MaterialIcons name="arrow-right" size={36} color="rgba(0,0,0,0.7)" />
           </TouchableOpacity>
         </View>
@@ -148,4 +159,4 @@ const MonthGrid = () => {
   );
 };
 
-export default MonthGrid;
+export default OCMonthGrid;

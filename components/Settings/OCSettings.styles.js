@@ -5,6 +5,7 @@ export default StyleSheet.create({
     flexDirection: "column",
     alignContent: "space-between",
     paddingBottom: 16, // Add paddingBottom to create space between elements
+    gap: 8
   },
   cell: {
     marginTop: 4,
@@ -12,6 +13,21 @@ export default StyleSheet.create({
     paddingVertical: 10,
     backgroundColor: "rgba(0,0,0,0.1)",
     borderWidth: 1,
+  },
+  switchCell: {
+    flexDirection: 'row',
+    alignContent: 'center',
+    justifyContent: 'space-between',
+    marginTop: 4,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    backgroundColor: "rgba(0,0,0,0.1)",
+    borderWidth: 1,
+  },
+  switchTitle: {
+    padding: 4,
+    fontSize: 18,
+    fontFamily: "TimesNewRoman"
   },
   aboutTitle: {
     fontFamily: "TimesNewRoman",

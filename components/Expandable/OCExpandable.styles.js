@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
-
     padding: 4,
     // Add more container styles as needed
   },

@@ -2,13 +2,13 @@ import styles from './OCDayView.styles';
 import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import { Divider } from 'react-native-elements';
-import Expandable from '../Expandable/OCExpandable';
+import OCExpandable from '../Expandable/OCExpandable';
 import { getMockDailyReadingData } from '../../utilities/OCScriptureHelper';
 import { getHolidayData } from '../../utilities/OCHolidayHelper';
 import { getSaintData } from '../../utilities/OCSaintHelper';
 import { getFastIcon, getFastTitle } from '../../utilities/OCFastHelper';
 
-const DayView = ({ date, dayData }) => {
+const OCDayView = ({ date, dayData }) => {
 
   const saints = getSaintData(date)
   const holidays = getHolidayData(date)
@@ -38,7 +38,7 @@ const DayView = ({ date, dayData }) => {
             <Divider style={styles.divider} width={2} color={'grey'}></Divider>
             {
               saints.map((saint) => (
-                <Expandable key={saint.title} title={saint.title} description={saint.description} showDivider={false} />
+                <OCExpandable key={saint.title} title={saint.title} description={saint.description} showDivider={false} />
               ))
             }
           </View>
@@ -52,7 +52,7 @@ const DayView = ({ date, dayData }) => {
             <Divider style={styles.divider} width={2} color={'grey'}></Divider>
             {
               holidays.map((holiday) => (
-                <Expandable key={holiday.title} title={holiday.title} description={holiday.description} showDivider={false} />
+                <OCExpandable key={holiday.title} title={holiday.title} description={holiday.description} showDivider={false} />
               ))
             }
           </View>
@@ -61,8 +61,8 @@ const DayView = ({ date, dayData }) => {
         <View style={styles.cell}>
           <Text style={styles.aboutTitle}>Daily Readings</Text>
           <Divider style={styles.divider} width={2} color={'grey'}></Divider>
-          <Expandable key={dailyReading.psalm.number} title={`Psalm ${dailyReading.psalm.number}`} description={dailyReading.psalm.content} showDivider={false} />
-          <Expandable key={dailyReading.proverb.number} title={`Proverb ${dailyReading.proverb.number}`} description={dailyReading.proverb.content} showDivider={false} />
+          <OCExpandable key={dailyReading.psalm.number} title={`Psalm ${dailyReading.psalm.number}`} description={dailyReading.psalm.content} showDivider={false} />
+          <OCExpandable key={dailyReading.proverb.number} title={`Proverb ${dailyReading.proverb.number}`} description={dailyReading.proverb.content} showDivider={false} />
         </View>
       </View>
     </ScrollView>
@@ -70,4 +70,4 @@ const DayView = ({ date, dayData }) => {
   );
 };
 
-export default DayView;
+export default OCDayView;

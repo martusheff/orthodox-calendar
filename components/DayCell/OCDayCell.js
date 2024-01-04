@@ -4,16 +4,18 @@ import styles from "./OCDayCell.styles";
 import { getHolidayData, getHolidayIcon } from '../../utilities/OCHolidayHelper';
 import { getSaintData } from '../../utilities/OCSaintHelper';
 import { getFastIcon } from '../../utilities/OCFastHelper';
+import { OCMediumImpact } from '../../utilities/OCHapticHelper';
 
-const EmptyDayCell = () => (
+const OCEmptyDayCell = () => (
   <View style={styles.emptyCell} />
 );
 
-const DayCell = ({ dateString, dayData, emptyCell, toggleGridCollapse, handleDayCellTap, pos }) => {
+const OCDayCell = ({ dateString, dayData, emptyCell, toggleGridCollapse, handleDayCellTap, pos }) => {
   if (emptyCell) {
-    return <EmptyDayCell />;
+    return <OCEmptyDayCell />;
   }
-  const handlePress = () => {
+  const handlePress = async () => {
+    await OCMediumImpact()
     toggleGridCollapse();
     handleDayCellTap(dateString, dayData);
   };
@@ -74,4 +76,4 @@ const DayCell = ({ dateString, dayData, emptyCell, toggleGridCollapse, handleDay
   );
 };
 
-export default DayCell;
+export default OCDayCell;
