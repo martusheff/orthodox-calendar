@@ -15,11 +15,11 @@
       "**/*"
     ],
     "ios": {
-      "buildNumber": "19",
+      "buildNumber": "20",
       "supportsTablet": true,
       "bundleIdentifier": "com.andronick.orthodoxcalendar",
       "infoPlist": {
-        "CFBundleDisplayName": "Old Believer Cal"
+        "CFBundleDisplayName": "OrthoCal"
       }
     },
     "android": {
