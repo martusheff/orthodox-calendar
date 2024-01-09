@@ -93,12 +93,18 @@ export default StyleSheet.create({
         alignItems: 'center',
         aspectRatio: 1/1
     },
+    fastTitleCellTopContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        gap: 8
+    },
     fastTitleCellTop: {
         flex: 1,
         backgroundColor: 'rgba(0,0,0,0.1)',
         borderWidth: 1 ,
-        justifyContent: 'center',
-        alignItems: 'flex-start',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
     },
     fastTitleCellBottom: {
         width: '100%',
@@ -117,7 +123,16 @@ export default StyleSheet.create({
     scrollView: {
         // flexGrow: 1,
         // showsVerticalScrollIndicator: false
+    },
+    holidayIconContainer: {
+        backgroundColor: 'rgba(0,0,0,0.1)',
+        borderWidth: 1,
+        aspectRatio: 1/1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    holidayIcon: {
+        width: 21,
+        height: 21
     }
-
-
 });

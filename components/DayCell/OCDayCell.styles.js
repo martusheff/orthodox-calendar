@@ -116,7 +116,7 @@ export default StyleSheet.create({
   },
   firstFirst: {
     borderBottomWidth: 0,
-    borderRightWidth: 0
+    borderRightWidth: 0,
   },
   topLeftDate: {
     fontFamily: 'TimesNewRoman',
