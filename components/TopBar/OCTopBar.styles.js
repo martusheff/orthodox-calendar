@@ -1,8 +1,11 @@
 import { StyleSheet, Dimensions } from 'react-native'
+import OCColor from '../../styles/OCColor';
+import OCFont from '../../styles/OCFont';
 
 const screenWidth = Dimensions.get('window').width;
 const containerWidth = screenWidth / 7 * 5 - 36;
 const yearWidth = screenWidth / 7 - 10;
+
 
 export default StyleSheet.create({
     container: {
@@ -15,10 +18,12 @@ export default StyleSheet.create({
         gap: 4
     },
     title: {
+        justifyContent: 'center',
+        alignItems: 'center',
         fontSize: 38,
-        color: '#ee018c',
+        color: OCColor.pink,
         textAlign: 'center',
-        fontFamily: 'Algerian',
+        fontFamily: OCFont.algerian,
         textShadowColor: 'black',
         textShadowOffset: { width: 1, height: 1 },
         textShadowRadius: 0,
@@ -28,15 +33,17 @@ export default StyleSheet.create({
                 textShadowRadius: 0.1,
             },
           }),
+    
       
     },
     titleContainer: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        height: '100%',
         width: containerWidth,
         paddingHorizontal: 8,
-        backgroundColor: 'rgba(0,0,0,0.15)',
+        backgroundColor: OCColor.black15,
         borderColor: 'black',
         borderWidth: 1
     },
@@ -46,9 +53,10 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: yearWidth,
-        backgroundColor: 'rgba(0,0,0,0.15)',
+        backgroundColor: OCColor.black15,
         borderColor: 'black',
-        borderWidth: 1
+        borderWidth: 1,
+        
     },
 
     containerBorder: {
@@ -60,16 +68,15 @@ export default StyleSheet.create({
         borderWidth: 1
     },
     year: {
-
         fontSize: 16,
         textAlign: 'center',
-        fontFamily: 'TimesNewRoman',
+        fontFamily: OCFont.times,
     },
     divider: {
         height: 15,
         width: '100%',
         resizeMode: 'contain',
-        tintColor: '#ee018c',
+        tintColor: OCColor.pink,
 
     }
 

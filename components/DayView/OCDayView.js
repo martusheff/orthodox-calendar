@@ -43,6 +43,18 @@ const OCDayView = ({ date, dayData }) => {
           </View>
         </View>
         {
+          dayData.isHoliday &&
+          <View style={styles.cell}>
+            <Text style={styles.aboutTitle}>Holiday</Text>
+            <Divider style={styles.divider} width={2} color={'grey'}></Divider>
+            {
+              holidays.map((holiday) => (
+                <OCExpandable key={holiday.title} title={holiday.title} description={holiday.description} showDivider={false} />
+              ))
+            }
+          </View>
+        }
+        {
           saints.length > 0 &&
           <View style={styles.cell}>
             <Text style={styles.aboutTitle}>Saints & Martyrs</Text>
@@ -55,26 +67,12 @@ const OCDayView = ({ date, dayData }) => {
           </View>
         }
 
-
-        {
-          dayData.isHoliday &&
-          <View style={styles.cell}>
-            <Text style={styles.aboutTitle}>Holiday</Text>
-            <Divider style={styles.divider} width={2} color={'grey'}></Divider>
-            {
-              holidays.map((holiday) => (
-                <OCExpandable key={holiday.title} title={holiday.title} description={holiday.description} showDivider={false} />
-              ))
-            }
-          </View>
-        }
-
-        <View style={styles.cell}>
+        {/* <View style={styles.cell}>
           <Text style={styles.aboutTitle}>Daily Readings</Text>
           <Divider style={styles.divider} width={2} color={'grey'}></Divider>
           <OCExpandable key={dailyReading.psalm.number} title={`Psalm ${dailyReading.psalm.number}`} description={dailyReading.psalm.content} showDivider={false} />
           <OCExpandable key={dailyReading.proverb.number} title={`Proverb ${dailyReading.proverb.number}`} description={dailyReading.proverb.content} showDivider={false} />
-        </View>
+        </View> */}
       </View>
     </ScrollView>
 

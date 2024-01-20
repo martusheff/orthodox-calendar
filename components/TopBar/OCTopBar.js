@@ -4,6 +4,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 import styles from './OCTopBar.styles';
 import { Entypo } from '@expo/vector-icons';
 import { OCMediumImpact } from '../../utilities/OCHapticHelper';
+import OCColor from '../../styles/OCColor';
+
+
 
 const OCTopBar = ({ toggleGridCollapse, title, isExpanded, setIsShowSettings, year, ccYear }) => {
 
@@ -20,6 +23,8 @@ const OCTopBar = ({ toggleGridCollapse, title, isExpanded, setIsShowSettings, ye
   const handleToggle = () => {
     toggleGridCollapse();
   }
+
+  
 
   return (
     <View>
@@ -56,9 +61,9 @@ const OCTopBar = ({ toggleGridCollapse, title, isExpanded, setIsShowSettings, ye
               <TouchableOpacity onPress={handleToggle}>
                 <TouchableOpacity onPress={handlePress}>
                   {isExpanded ?
-                    <MaterialIcons name="settings" size={24} color="rgba(0,0,0,0.7)" />
+                    <MaterialIcons name="settings" size={24} color={OCColor.black70} />
                     :
-                    <Entypo name="chevron-up" size={24} color="rgba(0,0,0,0.7)" />}
+                    <Entypo name="chevron-up" size={24} color={OCColor.black70} />}
                 </TouchableOpacity>
 
               </TouchableOpacity>

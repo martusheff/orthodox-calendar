@@ -83,7 +83,7 @@
       "fast_level": 3,
       "cc_day": 24,
       "saints": ["Polycarp"],
-      "isHoliday": true,
+      "isHoliday": false,
       "holiday_description": "1st & 2nd Finding of the Head of St John the Baptist",
       "day_indicator_level": 0
     },

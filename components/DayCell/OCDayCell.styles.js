@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native';
+import OCColor from '../../styles/OCColor';
+import OCFont from '../../styles/OCFont';
 
 export default StyleSheet.create({
   cell: {
@@ -58,7 +60,7 @@ export default StyleSheet.create({
     fontSize: 6.5,
     lineHeight: 6.25,
     textAlign: 'center',
-    fontFamily: 'TimesNewRoman',
+    fontFamily: OCFont.times,
     paddingHorizontal: 2
   },
   holidayContainer: {
@@ -68,13 +70,13 @@ export default StyleSheet.create({
     fontSize: 6.5,
     lineHeight: 5.75,
     textAlign: 'center',
-    fontFamily: 'TimesNewRoman',
-    color: '#ee018c',
+    fontFamily: OCFont.times,
+    color: OCColor.pink,
     padding: 2
 
   },
   todayIndicator: {
-    backgroundColor: '#ee018c',
+    backgroundColor: OCColor.pink,
     color: 'white'
   },
   left: {
@@ -119,15 +121,15 @@ export default StyleSheet.create({
     borderRightWidth: 0,
   },
   topLeftDate: {
-    fontFamily: 'TimesNewRoman',
+    fontFamily: OCFont.times,
     fontSize: 16
   },
   topRightDate: {
-    fontFamily: 'TimesNewRoman',
+    fontFamily: OCFont.times,
     fontSize: 9,
   },
   holidayCell: {
-    backgroundColor: '#ffd9e8'
+    backgroundColor: OCColor.lightPink
   },
   topRightQuadrantTop: {
     flex: 1,
@@ -150,7 +152,7 @@ export default StyleSheet.create({
     alignItems: 'flex-end',
     width: '100%',
     height: 20,
-    backgroundColor: 'rgba(0,0,0,0.05)',
+    backgroundColor: OCColor.black05,
     borderTopWidth: 0.75
   },
   holidayIcon: {

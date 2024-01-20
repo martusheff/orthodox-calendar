@@ -4,6 +4,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import styles from './App.styles';
 import OCMonthGrid from './components/MonthGrid/OCMonthGrid';
+import { Text } from 'react-native';
 
 
 const fetchFonts = () => {
@@ -18,6 +19,9 @@ const App = () => {
   const [fontLoaded, setFontLoaded] = useState(false);
 
   useEffect( () => {
+
+    Text.defaultProps = Text.defaultProps || {};
+    Text.defaultProps.allowFontScaling = false;
 
     async function loadResourcesAndDataAsync() {
       try {
