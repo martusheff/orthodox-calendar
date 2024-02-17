@@ -41,14 +41,14 @@ const OCSettings = () => {
     <ScrollView>
     <View style={styles.container}>
 
-      <View style={styles.switchCell}>
+      {/* <View style={styles.switchCell}>
         <Text style={styles.switchTitle}>{isModernEnabled ? "Modern" : "Traditional"}</Text>
         <Switch
           value={isModernEnabled}
           onValueChange={handleStyleChange}
           trackColor={{ false: "gray", true: OCColor.pink }}
         />
-      </View>
+      </View> */}
 
 
       <View style={styles.switchCell}>
@@ -60,9 +60,10 @@ const OCSettings = () => {
         />
       </View>
 
-      <View style={[styles.cell, { borderRadius: isModernEnabled ? 12 : 0 }]}>
+      {/* <View style={[styles.cell, { borderRadius: isModernEnabled ? 12 : 0 }]}>
         <OCContactDropdown/>
-      </View>
+      </View> */}
+
       <View style={[styles.cell, { borderRadius: isModernEnabled ? 12 : 0}]}>
         <OCExpandable title={"About the Calendar"} description={about} showDivider={true} />
       </View>

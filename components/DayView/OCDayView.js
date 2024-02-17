@@ -3,17 +3,15 @@ import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import { Divider } from 'react-native-elements';
 import OCExpandable from '../Expandable/OCExpandable';
-import { getMockDailyReadingData } from '../../utilities/OCScriptureHelper';
 import { getHolidayData, getHolidayIcon } from '../../utilities/OCHolidayHelper';
 import { getSaintData } from '../../utilities/OCSaintHelper';
-import { getFastIcon, getFastTitle } from '../../utilities/OCFastHelper';
+import { getFastIcon, getFastTitle, getFastingInfo } from '../../utilities/OCFastHelper';
 
 const OCDayView = ({ date, dayData }) => {
 
   const saints = getSaintData(date)
   const holidays = getHolidayData(date)
-  const fastTitle = getFastTitle(date)
-  const dailyReading = getMockDailyReadingData()
+  const fastTitle = getFastingInfo(date)
 
   return (
     <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
@@ -29,13 +27,12 @@ const OCDayView = ({ date, dayData }) => {
               </View>
               {
                 holidays.length > 0 && holidays.map((holiday, index) => (
-                  <View style={styles.holidayIconContainer}>
-                  <Image key={`holiday-icon-${index}`} source={getHolidayIcon(holiday.level)} style={styles.holidayIcon} />
+                  <View key={`holiday-icon-${index}`} style={styles.holidayIconContainer}>
+                  <Image source={getHolidayIcon(holiday.level)} style={styles.holidayIcon} />
                   </View>
                 ))
               }
             </View>
-
 
             <View style={styles.fastTitleCellBottom}>
               <Text style={styles.fastLabel}>{`${fastTitle && fastTitle + ", "}${getFastTitle(dayData.fast_level)}`}</Text>
