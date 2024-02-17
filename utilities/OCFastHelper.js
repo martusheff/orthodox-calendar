@@ -1,5 +1,5 @@
 import moment from "moment";
-import { calculateEasterFromYear } from "./OCPaschaHelper";
+import { calculateEasterFromYear, getDistanceToPascha } from "./OCPaschaHelper";
 
 export function isApostlesFast(date) {
     const easterDate = moment(calculateEasterFromYear(date.year()));
@@ -22,6 +22,13 @@ export function isNativityFast(date) {
     const isFast = date.isBetween(nativityStart, nativityEnd, 'day', '[]') ||
         date.date() < nativityEnd.date() && date.month() === 0;
     return isFast;
+}
+
+export function isCheesefare(date) {
+    const cheesefareEnd = moment(calculateEasterFromYear(date.year())).add(-49, 'days');
+    const cheesefareStart = cheesefareEnd.clone().add(-6, 'days')
+    const isFast = date.isBetween(cheesefareStart, cheesefareEnd, 'day', '[]')
+    return isFast
 }
 
 export function isGreatFast(date) {
@@ -52,6 +59,10 @@ export function getFastingInfo(date) {
 
     if (isGreatFast(date)) {
         return "Great Fast"
+    }
+
+    if (isCheesefare(date)) {
+        return "Cheesefare"
     }
 
     return "";

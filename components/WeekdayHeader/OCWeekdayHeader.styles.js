@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import OCColor from "../../styles/OCColor";
 
 export default StyleSheet.create({
     row: {
@@ -27,6 +28,6 @@ export default StyleSheet.create({
         fontFamily: 'TimesNewRoman'
     },
     sunday: {
-        backgroundColor: '#ffd9e8'
+        backgroundColor: OCColor.lightPink
     }
 });

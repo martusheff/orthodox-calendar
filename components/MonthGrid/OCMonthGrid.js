@@ -14,6 +14,8 @@ import { PanGestureHandler, State, GestureHandlerRootView } from 'react-native-g
 import { getDayData } from '../../utilities/OCDayHelper';
 import { getCellPosition } from '../../utilities/OCGridHelper';
 import { OCMediumImpact } from '../../utilities/OCHapticHelper';
+import OCColor from '../../styles/OCColor';
+import { getYearData } from '../../utilities/OCYearHelper';
 
 const OCMonthGrid = () => {
   const [currentDate, setCurrentDate] = useState(moment());
@@ -129,9 +131,11 @@ const OCMonthGrid = () => {
     );
   }
 
+  let yearData = getYearData(currentDate)
+
   return (
     <SafeAreaView style={styles.container}>
-      <OCTopBar title={isGridCollapsed ? showSettings ? "Settings" : currentDate.format("MMM DD") : currentDate.format('MMMM')} toggleGridCollapse={toggleGridCollapse} isExpanded={!isGridCollapsed} setIsShowSettings={setShowSettings} year={currentDate.year()} ccYear={7532} />
+      <OCTopBar title={isGridCollapsed ? showSettings ? "Settings" : currentDate.format("MMM DD") : currentDate.format('MMMM')} toggleGridCollapse={toggleGridCollapse} isExpanded={!isGridCollapsed} setIsShowSettings={setShowSettings} year={currentDate.year()} ccYear={yearData.cc_year} />
       <GestureHandlerRootView style={{ flex: 1 }}>
         <PanGestureHandler onGestureEvent={onSwipeGestureEvent} onHandlerStateChange={onSwipeHandlerStateChange} minDeltaX={50}>
           <View style={{ flex: 1 }}>
@@ -145,13 +149,13 @@ const OCMonthGrid = () => {
         !isGridCollapsed &&
         <View style={styles.pageRow}>
           <TouchableOpacity onPress={() => onSwipeRight(true)}>
-            <MaterialIcons name="arrow-left" size={36} color="rgba(0,0,0,0.7)" />
+            <MaterialIcons name="arrow-left" size={36} color={OCColor.black70} />
 
           </TouchableOpacity>
 
-          <PageIndicator activeColor={'#ee018c'} variant='train' gap={6} borderRadius={0} size={4} count={12} current={currentDate.month()} />
+          <PageIndicator activeColor={OCColor.pink} variant='train' gap={6} borderRadius={0} size={4} count={12} current={currentDate.month()} />
           <TouchableOpacity onPress={() => onSwipeLeft(true)}>
-            <MaterialIcons name="arrow-right" size={36} color="rgba(0,0,0,0.7)" />
+            <MaterialIcons name="arrow-right" size={36} color={OCColor.black70} />
           </TouchableOpacity>
         </View>
       }

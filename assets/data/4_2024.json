@@ -292,7 +292,7 @@
       "fast_level": 1,
       "cc_day": 14,
       "saints": ["Martin"],
-      "isHoliday": true,
+      "isHoliday": false,
       "holiday_description": "Lazarus Saturday",
       "day_indicator_level": 3
     },

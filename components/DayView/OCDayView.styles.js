@@ -1,4 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
+import OCFont from "../../styles/OCFont";
+import OCColor from "../../styles/OCColor";
 
 
 const screenHeight = Dimensions.get('window').height;
@@ -11,25 +13,23 @@ export default StyleSheet.create({
         gap: 10
     },
     fastCell: {
-        backgroundColor: 'rgba(0,0,0,0.1)',
+        backgroundColor: OCColor.black10,
         height: '100%',
         flexDirection: 'row',
-        fontFamily: 'TimesNewRoman',
+        fontFamily: OCFont.times,
         borderWidth: 1,
         justifyContent: 'flex-start',
         alignItems: 'center',
         padding: 10,
     },
     dayTitleCell: {
-        // backgroundColor: '#ee018c',
         paddingTop: 16
 
     },
     fastCellImage: {
-        // tintColor: '#ee018c',
     },
     fastCellText: {
-        fontFamily: 'TimesNewRoman',
+        fontFamily: OCFont.times,
         fontSize: 16,
         paddingHorizontal: 8
     },
@@ -43,7 +43,7 @@ export default StyleSheet.create({
         borderColor: 'darkgrey',
     },
     dayTitle: {
-        fontFamily: 'TimesNewRoman',
+        fontFamily: OCFont.times,
         fontSize: 20,
         paddingHorizontal: 6
     },
@@ -54,22 +54,22 @@ export default StyleSheet.create({
         marginTop: 4,
         paddingHorizontal: 8,
         paddingVertical: 4,
-        backgroundColor: 'rgba(0,0,0,0.1)',
+        backgroundColor: OCColor.black10,
         borderWidth: 1
     },
     aboutTitle: {
-        fontFamily: 'TimesNewRoman',
+        fontFamily: OCFont.times,
         fontSize: 21,
         padding: 4
     },
     aboutBody: {
-        fontFamily: 'TimesNewRoman',
+        fontFamily: OCFont.times,
         textAlign: 'justify',
         fontSize: 17,
         padding: 4
     },
     saintBody: {
-        fontFamily: 'TimesNewRoman',
+        fontFamily: OCFont.times,
         textAlign: 'justify',
         fontSize: 14,
         paddingHorizontal: 4
@@ -87,7 +87,7 @@ export default StyleSheet.create({
     },
     fastIconCell: {
         flex: 2,
-        backgroundColor: 'rgba(0,0,0,0.1)',
+        backgroundColor: OCColor.black10,
         borderWidth: 1,
         justifyContent: 'center',
         alignItems: 'center',
@@ -100,7 +100,7 @@ export default StyleSheet.create({
     },
     fastTitleCellTop: {
         flex: 1,
-        backgroundColor: 'rgba(0,0,0,0.1)',
+        backgroundColor: OCColor.black10,
         borderWidth: 1 ,
         flexDirection: 'row',
         justifyContent: 'flex-start',
@@ -109,13 +109,13 @@ export default StyleSheet.create({
     fastTitleCellBottom: {
         width: '100%',
         flex: 1,
-        backgroundColor: 'rgba(0,0,0,0.1)',
+        backgroundColor: OCColor.black10,
         borderWidth: 1,
         justifyContent: 'center',
         alignItems: 'flex-start',
     },
     fastLabel: {
-        fontFamily: 'TimesNewRoman',
+        fontFamily: OCFont.times,
         fontSize: 18,
         paddingHorizontal: 8,
         
@@ -125,7 +125,7 @@ export default StyleSheet.create({
         // showsVerticalScrollIndicator: false
     },
     holidayIconContainer: {
-        backgroundColor: 'rgba(0,0,0,0.1)',
+        backgroundColor: OCColor.black10,
         borderWidth: 1,
         aspectRatio: 1/1,
         justifyContent: 'center',

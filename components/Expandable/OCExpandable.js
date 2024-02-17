@@ -5,7 +5,7 @@ import styles from './OCExpandable.styles';
 import { Divider } from 'react-native-elements';
 import { OCMediumImpact } from '../../utilities/OCHapticHelper';
 
-const OCExpandable = ({ title, description, showDivider }) => {
+const OCExpandable = ({ title, description, showDivider, actionButton = false }) => {
   const [expanded, setExpanded] = useState(false);
 
   const isExpandable = description !== "Additional information is being gathered."
@@ -16,6 +16,10 @@ const OCExpandable = ({ title, description, showDivider }) => {
       setExpanded(!expanded);
     }
   };
+
+  const handleReadMore = async () => {
+    await OCMediumImpact()
+  }
 
   return (
     <View style={styles.container}>
@@ -35,7 +39,23 @@ const OCExpandable = ({ title, description, showDivider }) => {
       {expanded && showDivider &&
         <Divider style={styles.divider} width={2} color={'grey'}></Divider>
       }
-      {expanded && <Text style={styles.descriptionText}>{description}</Text>}
+      {expanded &&
+        <View>
+          <Text style={styles.descriptionText}>{description}</Text>
+          { actionButton &&
+          <View style={styles.readMoreContainer}>
+            <View style={styles.readMoreButton}>
+              <TouchableOpacity onPress={handleReadMore}>
+                <Text style={styles.readMoreLabel}>Read More</Text>
+              </TouchableOpacity>
+            </View>
+
+          </View>
+          }
+
+        </View>
+      }
+
     </View>
   );
 };

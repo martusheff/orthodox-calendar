@@ -1,4 +1,7 @@
 import { StyleSheet } from "react-native";
+import OCFont from "../../styles/OCFont";
+import OCColor from "../../styles/OCColor";
+
 
 export default StyleSheet.create({
   container: {
@@ -11,8 +14,8 @@ export default StyleSheet.create({
     marginTop: 4,
     paddingHorizontal: 16,
     paddingVertical: 10,
-    backgroundColor: "rgba(0,0,0,0.1)",
-    borderWidth: 1,
+    backgroundColor: OCColor.black10,
+    borderWidth: 1
   },
   switchCell: {
     flexDirection: 'row',
@@ -21,21 +24,21 @@ export default StyleSheet.create({
     marginTop: 4,
     paddingHorizontal: 16,
     paddingVertical: 10,
-    backgroundColor: "rgba(0,0,0,0.1)",
+    backgroundColor: OCColor.black10,
     borderWidth: 1,
   },
   switchTitle: {
     padding: 4,
     fontSize: 18,
-    fontFamily: "TimesNewRoman"
+    fontFamily: OCFont.times
   },
   aboutTitle: {
-    fontFamily: "TimesNewRoman",
+    fontFamily: OCFont.times,
     fontSize: 21,
     padding: 4,
   },
   aboutBody: {
-    fontFamily: "TimesNewRoman",
+    fontFamily: OCFont.times,
     textAlign: "justify",
     fontSize: 16,
     padding: 4,

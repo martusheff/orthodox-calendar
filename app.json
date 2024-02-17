@@ -15,7 +15,7 @@
       "**/*"
     ],
     "ios": {
-      "buildNumber": "20",
+      "buildNumber": "23",
       "supportsTablet": true,
       "bundleIdentifier": "com.andronick.orthodoxcalendar",
       "infoPlist": {
@@ -23,7 +23,7 @@
       }
     },
     "android": {
-      "versionCode": 3,
+      "versionCode": 23,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
